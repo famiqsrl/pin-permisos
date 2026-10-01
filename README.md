@@ -15,8 +15,7 @@ necesite preguntar por un permiso, en el lenguaje que sea.
 | `sql/permisos_efectivos.sql` | Contrato de cómo se calculan los permisos efectivos de un usuario. |
 | `bin/generar.php` | Genera los tres archivos de constantes desde el JSON. |
 
-Qué roles tiene cada permiso **no** está acá: eso es un dato que administra
-backend-pin (siembra inicial y después el ABM de gestion).
+Qué roles tiene cada permiso **no** está acá: se administra desde gestion (ABM de roles y permisos). Los datos viven en la base de la PIN; backend-pin solo carga la siembra inicial del corte.
 
 ## Reglas
 
