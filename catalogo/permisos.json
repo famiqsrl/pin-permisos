@@ -1,0 +1,1053 @@
+{
+  "version": "1.0.0",
+  "prefijo_atributo": "PERM_",
+  "modulos": {
+    "pin": "PIN",
+    "gestion": "Gestión"
+  },
+  "permisos": [
+    {
+      "slug": "pin.ingresar",
+      "nombre": "Ingresar a la PIN",
+      "descripcion": "Entrar al sitio y usar la PIN.",
+      "modulo": "pin",
+      "grupo": "Ingreso y navegación"
+    },
+    {
+      "slug": "mi_cuenta.ingresar",
+      "nombre": "Mi cuenta",
+      "descripcion": "Entrar a Mi cuenta.",
+      "modulo": "pin",
+      "grupo": "Ingreso y navegación"
+    },
+    {
+      "slug": "mis_gestiones.ingresar",
+      "nombre": "Mis gestiones",
+      "descripcion": "El panel del asesor: elegir cliente, seguimiento, reportes.",
+      "modulo": "pin",
+      "grupo": "Ingreso y navegación"
+    },
+    {
+      "slug": "cliente.elegir_obligatorio",
+      "nombre": "Elegir cliente antes de operar",
+      "descripcion": "Sin cliente elegido, solo puede usar Mis gestiones y el alta de clientes.",
+      "modulo": "pin",
+      "grupo": "Ingreso y navegación"
+    },
+    {
+      "slug": "chat_ayuda.ver",
+      "nombre": "Ver botones de chat",
+      "descripcion": "WhatsApp y chat de ayuda. Sin sesión se siguen viendo.",
+      "modulo": "pin",
+      "grupo": "Ingreso y navegación"
+    },
+    {
+      "slug": "encuesta.responder",
+      "nombre": "Encuesta de satisfacción",
+      "descripcion": "Recibir la encuesta de satisfacción.",
+      "modulo": "pin",
+      "grupo": "Ingreso y navegación"
+    },
+    {
+      "slug": "cliente.operar_como",
+      "nombre": "Operar en nombre de un cliente",
+      "descripcion": "Elegir un cliente y trabajar por él; mensajes y textos de asesor.",
+      "modulo": "pin",
+      "grupo": "Operar en nombre de clientes"
+    },
+    {
+      "slug": "catalogo.ver_como_vendedor",
+      "nombre": "Catálogo con condiciones de vendedor",
+      "descripcion": "Búsqueda y precios del catálogo en modo vendedor; opciones completas de vinilo.",
+      "modulo": "pin",
+      "grupo": "Operar en nombre de clientes"
+    },
+    {
+      "slug": "cliente.dar_de_alta",
+      "nombre": "Dar de alta clientes",
+      "descripcion": "Registrar clientes nuevos a su nombre y volver a Mis gestiones.",
+      "modulo": "pin",
+      "grupo": "Operar en nombre de clientes"
+    },
+    {
+      "slug": "cliente.ver_informacion_interna",
+      "nombre": "Ver información interna del cliente",
+      "descripcion": "Clasificación, T1, pagos, bloqueos y score del cliente.",
+      "modulo": "pin",
+      "grupo": "Operar en nombre de clientes"
+    },
+    {
+      "slug": "cliente.ver_notas",
+      "nombre": "Ver notas del cliente",
+      "descripcion": "Notas del cliente en Mi cuenta y en el encabezado.",
+      "modulo": "pin",
+      "grupo": "Operar en nombre de clientes"
+    },
+    {
+      "slug": "vendedor.id_sap",
+      "nombre": "Vendedor Famiq con ID SAP",
+      "descripcion": "Valida el ID de SAP del vendedor y habilita la API externa.",
+      "modulo": "pin",
+      "grupo": "Operar en nombre de clientes"
+    },
+    {
+      "slug": "productos_especiales.ver",
+      "nombre": "Ver Productos Especiales",
+      "descripcion": "La sección Productos Especiales.",
+      "modulo": "pin",
+      "grupo": "Catálogo y producto"
+    },
+    {
+      "slug": "precio.ver_standard",
+      "nombre": "Ver precio standard",
+      "descripcion": "El precio standard en Productos Especiales.",
+      "modulo": "pin",
+      "grupo": "Catálogo y producto"
+    },
+    {
+      "slug": "producto.ver_marcas_internas",
+      "nombre": "Ver marcas internas del producto",
+      "descripcion": "Inmovilizado, recortes, cajón cerrado; botón Reportar un problema.",
+      "modulo": "pin",
+      "grupo": "Catálogo y producto"
+    },
+    {
+      "slug": "producto.ver_descuento_maximo",
+      "nombre": "Ver descuento máximo y contrato marco",
+      "descripcion": "El tag de descuento máximo y el contrato marco.",
+      "modulo": "pin",
+      "grupo": "Catálogo y producto"
+    },
+    {
+      "slug": "stock.ver_por_sucursal",
+      "nombre": "Ver stock por sucursal",
+      "descripcion": "Stock por sucursal en catálogo, ficha técnica y listas.",
+      "modulo": "pin",
+      "grupo": "Catálogo y producto"
+    },
+    {
+      "slug": "catalogo.ver_datos_tecnicos",
+      "nombre": "Ver datos técnicos internos",
+      "descripcion": "El ID de material y datos técnicos sobre la imagen.",
+      "modulo": "pin",
+      "grupo": "Catálogo y producto"
+    },
+    {
+      "slug": "recortes.ver_deposito_origen",
+      "nombre": "Ver depósito de origen en recortes",
+      "descripcion": "La columna Depósito de Origen en recortes de tubo.",
+      "modulo": "pin",
+      "grupo": "Catálogo y producto"
+    },
+    {
+      "slug": "politica_precios.descargar",
+      "nombre": "Descargar política de precios",
+      "descripcion": "El Excel de política de precios.",
+      "modulo": "pin",
+      "grupo": "Catálogo y producto"
+    },
+    {
+      "slug": "listas.usar",
+      "nombre": "Usar listas y favoritos",
+      "descripcion": "Marcar favoritos y usar listas.",
+      "modulo": "pin",
+      "grupo": "Listas y favoritos"
+    },
+    {
+      "slug": "listas.crear_famiq",
+      "nombre": "Crear listas Famiq",
+      "descripcion": "Las listas que crea son de Famiq y no personales.",
+      "modulo": "pin",
+      "grupo": "Listas y favoritos"
+    },
+    {
+      "slug": "listas.editar_famiq",
+      "nombre": "Editar listas Famiq",
+      "descripcion": "Hoy lo decide un mail hardcodeado; pasa a permiso directo de esas personas.",
+      "modulo": "pin",
+      "grupo": "Listas y favoritos"
+    },
+    {
+      "slug": "listas.descargar_reporte",
+      "nombre": "Descargar reporte de listas",
+      "descripcion": "El Excel de listas de deseos.",
+      "modulo": "pin",
+      "grupo": "Listas y favoritos"
+    },
+    {
+      "slug": "carrito.precio_manual",
+      "nombre": "Precio manual y moneda",
+      "descripcion": "Cargar precio manual y elegir moneda por posición.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "carrito.notas",
+      "nombre": "Notas en el carrito",
+      "descripcion": "Notas por posición y de cabecera.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "carrito.alternativas",
+      "nombre": "Alternativas de producto",
+      "descripcion": "Generar y ordenar alternativas.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "carrito.opciones_cabecera",
+      "nombre": "Opciones del carrito",
+      "descripcion": "Agregar alternativas y complementarios automáticos.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "carrito.carga_masiva_oferta_precio_manual",
+      "nombre": "Carga masiva en ofertas de precio manual",
+      "descripcion": "Carga masiva aunque el carrito venga de una oferta con precio manual.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "carrito.cambiar_centro",
+      "nombre": "Cambiar el centro de las posiciones",
+      "descripcion": "Mover posiciones entre centros y sucursales.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "carrito.anular_con_motivo",
+      "nombre": "Anular posición con motivo",
+      "descripcion": "Pedir el motivo al anular una posición.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "carrito.vendedor_referenciado",
+      "nombre": "Vendedor referenciado",
+      "descripcion": "Gestión referenciada y elegir el vendedor referenciado.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "carrito.vendedor_referenciado_kiosco",
+      "nombre": "Vendedor referenciado desde kiosco",
+      "descripcion": "El cliente en un kiosco elige el vendedor que lo atendió.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "carrito.recuperar_sin_forzar_centro",
+      "nombre": "Recuperar carrito sin forzar centro",
+      "descripcion": "Recuperar desde un documento manteniendo sus centros.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "cupones.usar",
+      "nombre": "Cupones",
+      "descripcion": "Ver y aplicar cupones.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "envio.bonificar",
+      "nombre": "Bonificar envío y embalaje",
+      "descripcion": "Bonificar gastos de envío y embalaje.",
+      "modulo": "pin",
+      "grupo": "Carrito"
+    },
+    {
+      "slug": "cotizacion.guardar_en_cualquier_paso",
+      "nombre": "Guardar cotización en cualquier paso",
+      "descripcion": "Los demás solo guardan en el paso 2.",
+      "modulo": "pin",
+      "grupo": "Cotizaciones y pedidos"
+    },
+    {
+      "slug": "pedido.emitir",
+      "nombre": "Emitir pedidos",
+      "descripcion": "Emitir el pedido desde el carrito. Hoy el responsable de cuenta no puede.",
+      "modulo": "pin",
+      "grupo": "Cotizaciones y pedidos"
+    },
+    {
+      "slug": "pedido.exigir_mail_confirmacion",
+      "nombre": "Exigir mail de confirmación",
+      "descripcion": "Pide elegir el mail al que se envía la confirmación.",
+      "modulo": "pin",
+      "grupo": "Cotizaciones y pedidos"
+    },
+    {
+      "slug": "pedido.finalidad",
+      "nombre": "Finalidad del pedido",
+      "descripcion": "Cargar la finalidad del pedido.",
+      "modulo": "pin",
+      "grupo": "Cotizaciones y pedidos"
+    },
+    {
+      "slug": "pedido.consignacion",
+      "nombre": "Consignación",
+      "descripcion": "Marcar el pedido en consignación (Argentina).",
+      "modulo": "pin",
+      "grupo": "Cotizaciones y pedidos"
+    },
+    {
+      "slug": "pedido.pago_mostrador",
+      "nombre": "Pago en mostrador",
+      "descripcion": "Pedido de mostrador: abona en caja, solo cuenta corriente.",
+      "modulo": "pin",
+      "grupo": "Cotizaciones y pedidos"
+    },
+    {
+      "slug": "pedido.ofrecer_retiro_mostrador",
+      "nombre": "Ofrecer retiro en mostrador",
+      "descripcion": "Ofrecer el retiro por mostrador.",
+      "modulo": "pin",
+      "grupo": "Cotizaciones y pedidos"
+    },
+    {
+      "slug": "pago.condiciones_adicionales",
+      "nombre": "Condiciones de pago adicionales",
+      "descripcion": "Anticipo, otras condiciones y cambiar la condición del documento.",
+      "modulo": "pin",
+      "grupo": "Cotizaciones y pedidos"
+    },
+    {
+      "slug": "pago.cambiar_moneda",
+      "nombre": "Cambiar moneda de pago",
+      "descripcion": "Hoy es Desarrollador y dos mails hardcodeados, que pasan a permiso directo.",
+      "modulo": "pin",
+      "grupo": "Cotizaciones y pedidos"
+    },
+    {
+      "slug": "pedido.ver_muestras_gratis",
+      "nombre": "Ver pedidos de muestra gratis",
+      "descripcion": "Ver y abrir pedidos de muestra gratis.",
+      "modulo": "pin",
+      "grupo": "Cotizaciones y pedidos"
+    },
+    {
+      "slug": "documento.elegir_posiciones",
+      "nombre": "Elegir posiciones de una cotización",
+      "descripcion": "Elegir qué posiciones pasar al carrito.",
+      "modulo": "pin",
+      "grupo": "Documentos"
+    },
+    {
+      "slug": "documento.copiar_cotizacion",
+      "nombre": "Copiar cotización",
+      "descripcion": "Copiar y dar de alta por parecido.",
+      "modulo": "pin",
+      "grupo": "Documentos"
+    },
+    {
+      "slug": "documento.actualizar_oferta_especial",
+      "nombre": "Actualizar oferta especial vencida",
+      "descripcion": "Actualizar una oferta especial ya vencida.",
+      "modulo": "pin",
+      "grupo": "Documentos"
+    },
+    {
+      "slug": "documento.omitir_control_centro",
+      "nombre": "Abrir documentos de otro centro",
+      "descripcion": "No exige que coincidan los centros al comprar, modificar o recotizar.",
+      "modulo": "pin",
+      "grupo": "Documentos"
+    },
+    {
+      "slug": "documento.ver_condiciones_internas",
+      "nombre": "Ver condiciones internas",
+      "descripcion": "Sucursal de suministro y notas internas del documento.",
+      "modulo": "pin",
+      "grupo": "Documentos"
+    },
+    {
+      "slug": "mi_cuenta.compras",
+      "nombre": "Compras y transacciones",
+      "descripcion": "Las secciones Compras y Transacciones.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "mi_cuenta.ventas",
+      "nombre": "Ventas",
+      "descripcion": "La sección Ventas del proveedor.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "mi_cuenta.ayuda",
+      "nombre": "Ayuda",
+      "descripcion": "La sección Ayuda.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "mi_cuenta.centro_ayuda",
+      "nombre": "Centro de ayuda",
+      "descripcion": "Consultas y reclamos.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "mi_cuenta.estado_cuenta",
+      "nombre": "Estado de cuenta",
+      "descripcion": "El estado de cuenta.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "mi_cuenta.legajo_impositivo",
+      "nombre": "Legajo impositivo",
+      "descripcion": "El legajo impositivo (Argentina).",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "mi_cuenta.mis_codigos",
+      "nombre": "Mis códigos",
+      "descripcion": "Códigos propios del cliente para los productos.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "mi_cuenta.direcciones",
+      "nombre": "Mis direcciones",
+      "descripcion": "Direcciones de entrega.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "mi_cuenta.cambiar_contrasena",
+      "nombre": "Cambiar contraseña",
+      "descripcion": "Cambiar la contraseña desde Mi cuenta.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "personas.gestionar",
+      "nombre": "Mis personas",
+      "descripcion": "Gestionar las personas de la cuenta.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "personas.favoritas",
+      "nombre": "Personas favoritas",
+      "descripcion": "Marcar personas favoritas y ver a quién están asociadas.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "comprobantes_pago.ver",
+      "nombre": "Comprobantes de pago",
+      "descripcion": "Consultar comprobantes de pago.",
+      "modulo": "pin",
+      "grupo": "Mi cuenta"
+    },
+    {
+      "slug": "reclamos.modo_asesor",
+      "nombre": "Reclamos en modo asesor",
+      "descripcion": "Ver todos los mensajes, chat privado, elegir cliente y figurar como creador.",
+      "modulo": "pin",
+      "grupo": "Reclamos"
+    },
+    {
+      "slug": "reclamos.notas_internas",
+      "nombre": "Notas internas en reclamos",
+      "descripcion": "Cargar notas internas en un reclamo.",
+      "modulo": "pin",
+      "grupo": "Reclamos"
+    },
+    {
+      "slug": "crm.gestionar_contactos",
+      "nombre": "Gestionar contactos del CRM",
+      "descripcion": "Crear, asociar, actualizar y cerrar contactos de clientes.",
+      "modulo": "pin",
+      "grupo": "Reclamos"
+    },
+    {
+      "slug": "konnen.busqueda",
+      "nombre": "Búsqueda Konnen",
+      "descripcion": "Filtros y subfamilias del canal Konnen.",
+      "modulo": "pin",
+      "grupo": "Canal Konnen"
+    },
+    {
+      "slug": "konnen.documentos",
+      "nombre": "Documentos Konnen",
+      "descripcion": "Opera solo documentos Konnen; se informa como Konnen a SAP; login por documento M/K.",
+      "modulo": "pin",
+      "grupo": "Canal Konnen"
+    },
+    {
+      "slug": "cuenta_cliente.usar",
+      "nombre": "Cuenta cliente",
+      "descripcion": "Se identifica como cliente ante SAP y en el registro.",
+      "modulo": "pin",
+      "grupo": "Clientes y proveedores"
+    },
+    {
+      "slug": "cuenta_proveedor.usar",
+      "nombre": "Cuenta proveedor",
+      "descripcion": "Datos de proveedor e ingreso como proveedor.",
+      "modulo": "pin",
+      "grupo": "Clientes y proveedores"
+    },
+    {
+      "slug": "proveedores.portal",
+      "nombre": "Portal de proveedores",
+      "descripcion": "Órdenes de compra y facturas.",
+      "modulo": "pin",
+      "grupo": "Clientes y proveedores"
+    },
+    {
+      "slug": "proveedor.operar_como",
+      "nombre": "Operar en nombre de un proveedor",
+      "descripcion": "Elegir un proveedor y trabajar por él (Cuentas a pagar).",
+      "modulo": "pin",
+      "grupo": "Clientes y proveedores"
+    },
+    {
+      "slug": "pedidos_bloqueados.filtrar_por_asesor",
+      "nombre": "Filtrar pedidos bloqueados por asesor",
+      "descripcion": "El filtro Asesor en el seguimiento de pedidos bloqueados.",
+      "modulo": "pin",
+      "grupo": "Pedidos bloqueados y transportes"
+    },
+    {
+      "slug": "transportes.ver_horarios",
+      "nombre": "Ver horarios de transportes",
+      "descripcion": "La columna de horarios en transportes.",
+      "modulo": "pin",
+      "grupo": "Pedidos bloqueados y transportes"
+    },
+    {
+      "slug": "transportes.crear",
+      "nombre": "Crear transportes",
+      "descripcion": "Dar de alta un transporte nuevo.",
+      "modulo": "pin",
+      "grupo": "Pedidos bloqueados y transportes"
+    },
+    {
+      "slug": "sistema.log_sap",
+      "nombre": "Registro técnico de SAP",
+      "descripcion": "Guarda el detalle de las llamadas a SAP del usuario.",
+      "modulo": "pin",
+      "grupo": "Sistema"
+    },
+    {
+      "slug": "sistema.debug_carrito",
+      "nombre": "Debug del carrito",
+      "descripcion": "La herramienta de debug del carrito.",
+      "modulo": "pin",
+      "grupo": "Sistema"
+    },
+    {
+      "slug": "sistema.marcas_desarrollo",
+      "nombre": "Marcas de desarrollo en pantalla",
+      "descripcion": "Marcas técnicas en algunas pantallas.",
+      "modulo": "pin",
+      "grupo": "Sistema"
+    },
+    {
+      "slug": "sistema.no_informar_usuario_sap",
+      "nombre": "No informar el usuario a SAP",
+      "descripcion": "No envía el usuario web a SAP al consultar clientes.",
+      "modulo": "pin",
+      "grupo": "Sistema"
+    },
+    {
+      "slug": "producto.mantenimiento",
+      "nombre": "Mantenimiento de productos",
+      "descripcion": "Actualizar un material desde SAP y regenerar el Excel de materiales.",
+      "modulo": "pin",
+      "grupo": "Sistema"
+    },
+    {
+      "slug": "gestion.ingresar",
+      "nombre": "Ingresar a gestión",
+      "descripcion": "Entrar a gestión.",
+      "modulo": "gestion",
+      "grupo": "Gestión"
+    },
+    {
+      "slug": "roles.administrar",
+      "nombre": "Administrar roles y permisos",
+      "descripcion": "Las pantallas de roles y permisos.",
+      "modulo": "gestion",
+      "grupo": "Gestión"
+    },
+    {
+      "slug": "usuarios.administrar_internos",
+      "nombre": "Administrar usuarios internos",
+      "descripcion": "Sin este permiso solo se gestionan proveedores.",
+      "modulo": "gestion",
+      "grupo": "Gestión"
+    },
+    {
+      "slug": "user.index",
+      "nombre": "Ver usuarios",
+      "descripcion": "Listado de usuarios",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "user.create",
+      "nombre": "Crear usuario",
+      "descripcion": "Crear usuario",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "user.edit",
+      "nombre": "Editar usuario",
+      "descripcion": "Editar usuario",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "user.delete",
+      "nombre": "Eliminar usuario",
+      "descripcion": "Eliminar usuario",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "product.index",
+      "nombre": "Ver Productos",
+      "descripcion": "Listado de Productos",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "payment.index",
+      "nombre": "Ver Pagos",
+      "descripcion": "Listado de Pagos",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "client-code.index",
+      "nombre": "Ver Código Cliente",
+      "descripcion": "Listado de Código Cliente",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "client-code.create",
+      "nombre": "Crear Código Cliente",
+      "descripcion": "Crear Código Cliente",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "client-code.destroy",
+      "nombre": "Eliminar Código Cliente",
+      "descripcion": "Eliminar Código Cliente",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "list.index",
+      "nombre": "Ver Mis Listas",
+      "descripcion": "Listado de Listas",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "list.show",
+      "nombre": "Listas de Empresa",
+      "descripcion": "Listas de Empresa",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "list.create",
+      "nombre": "Crear Mis Listas",
+      "descripcion": "Crear Mis Listas",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "list.destroy",
+      "nombre": "Eliminar Lista",
+      "descripcion": "Eliminar Lista",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "legajo.index",
+      "nombre": "Ver Legajo impositivo",
+      "descripcion": "Listado del legajo impositivo",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "legajo.update",
+      "nombre": "Editar Legajo impositivo",
+      "descripcion": "Editar el legajo impositivo",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "materials.index",
+      "nombre": "Ver Materiales con Defectos",
+      "descripcion": "Listado de Materiales con Defectos",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "materials.show",
+      "nombre": "Ver Material con Defecto",
+      "descripcion": "Ver detalle de Material con Defecto",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "materials.create",
+      "nombre": "Crear Material con Defecto",
+      "descripcion": "Crear Material con Defecto",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "materials.destroy",
+      "nombre": "Eliminar Material con Defecto",
+      "descripcion": "Eliminar Material con Defecto",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "lead.index",
+      "nombre": "Ver Leads",
+      "descripcion": "Listado de Leads",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "tag.index",
+      "nombre": "Ver Etiquetas",
+      "descripcion": "Listado de Etiquetas",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "tag.create",
+      "nombre": "Crear Etiquetas",
+      "descripcion": "Crear Etiqueta",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "tag.edit",
+      "nombre": "Editar Etiqueta",
+      "descripcion": "Editar Etiqueta",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "tag.destroy",
+      "nombre": "Eliminar Etiqueta",
+      "descripcion": "Eliminar Etiqueta",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "filter-order.index",
+      "nombre": "Ver Filtros",
+      "descripcion": "Listado de Filtros",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "filter-order.show",
+      "nombre": "Ver Ordenamiento de filtros",
+      "descripcion": "Ver Ordenamiento de filtros",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "filter-order.update",
+      "nombre": "Editar Ordenamiento de filtros",
+      "descripcion": "Cambiar el orden de los filtros",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "component-types.types",
+      "nombre": "Ver Tipos de componentes",
+      "descripcion": "Listado de Tipos de componentes",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "component-types.index",
+      "nombre": "Ver Componentes de la Sección",
+      "descripcion": "Listado de los Componentes de la sección",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "components.index",
+      "nombre": "Ver Componentes",
+      "descripcion": "Listado de Componentes",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "components.create",
+      "nombre": "Crear Componente",
+      "descripcion": "Crear Componente",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "components.component.edit",
+      "nombre": "Editar Componente",
+      "descripcion": "Editar Componente",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "components.component.delete",
+      "nombre": "Eliminar Componente",
+      "descripcion": "Eliminar Componente",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "logos.index",
+      "nombre": "Ver Logos",
+      "descripcion": "Listado de Logos",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "logos.create",
+      "nombre": "Crear Logo",
+      "descripcion": "Crear Logo",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "logos.logo.edit",
+      "nombre": "Editar Logo",
+      "descripcion": "Editar Logo",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "logos.logo.delete",
+      "nombre": "Eliminar Logo",
+      "descripcion": "Eliminar Logo",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "hierarchy-node.index",
+      "nombre": "Ver Nodos",
+      "descripcion": "Listado de Nodos",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "hierarchy-node.create",
+      "nombre": "Crear Nodo",
+      "descripcion": "Crear Nodo",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "hierarchy-node.node.edit",
+      "nombre": "Editar Nodo",
+      "descripcion": "Editar Nodo",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "hierarchy-node.node.delete",
+      "nombre": "Eliminar Nodo",
+      "descripcion": "Eliminar Nodo",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "team.index",
+      "nombre": "Ver Personal",
+      "descripcion": "Listado de Personal",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "team.create",
+      "nombre": "Crear Personal",
+      "descripcion": "Crear Personal",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "team.edit",
+      "nombre": "Editar Personal",
+      "descripcion": "Editar Personal",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "team.delete",
+      "nombre": "Eliminar Personal",
+      "descripcion": "Eliminar Personal",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "messages.index",
+      "nombre": "Ver Mensajes",
+      "descripcion": "Listado de Mensajes",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "messages.create",
+      "nombre": "Crear Mensajes",
+      "descripcion": "Crear Mensajes",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "messages.message.edit",
+      "nombre": "Editar Mensajes",
+      "descripcion": "Editar Mensajes",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "messages.message.delete",
+      "nombre": "Eliminar Mensajes",
+      "descripcion": "Eliminar Mensajes",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "notifications.index",
+      "nombre": "Ver Novedad",
+      "descripcion": "Listado de Novedades",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "notifications.create",
+      "nombre": "Crear Novedad",
+      "descripcion": "Crear Novedad",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "notifications.notification.edit",
+      "nombre": "Editar Novedad",
+      "descripcion": "Editar Novedad",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "notifications.notification.delete",
+      "nombre": "Eliminar Novedad",
+      "descripcion": "Eliminar Novedad",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "feature-flags.index",
+      "nombre": "Ver Funcionalidades",
+      "descripcion": "Listado de Funcionalidades",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "feature-flags.create",
+      "nombre": "Crear funcionalidad",
+      "descripcion": "Crear funcionalidad",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "feature-flags.feature-flag.edit",
+      "nombre": "Editar Funcionalidades",
+      "descripcion": "Editar Funcionalidades",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "feature-flags.feature-flag.delete",
+      "nombre": "Eliminar Funcionalidades",
+      "descripcion": "Eliminar Funcionalidades",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "certificacion.index",
+      "nombre": "Ver Certificación",
+      "descripcion": "Listado de la certificación",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "certificacion.update",
+      "nombre": "Editar Certificación",
+      "descripcion": "Editar la certificación",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "calidad.index",
+      "nombre": "Ver Política de calidad",
+      "descripcion": "Listado de la politica de calidad",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "calidad.update",
+      "nombre": "Editar Política de calidad",
+      "descripcion": "Editar la politica de calidad",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "segments.index",
+      "nombre": "Ver Segmentos",
+      "descripcion": "Listado de Segmentos",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "segments.create",
+      "nombre": "Crear Segmento",
+      "descripcion": "Crear Segmento",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "segments.segment.edit",
+      "nombre": "Editar Segmento",
+      "descripcion": "Editar Segmento",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "segments.segment.delete",
+      "nombre": "Eliminar Segmento",
+      "descripcion": "Eliminar Segmento",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "empresas.index",
+      "nombre": "Ver Empresas",
+      "descripcion": "Listado de Empresas",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    }
+  ]
+}

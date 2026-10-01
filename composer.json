@@ -1,0 +1,14 @@
+{
+    "name": "famiq/pin-permisos",
+    "description": "Catálogo de permisos de la PIN: fuente única para backend-pin, frontend-pin, gestion y otros servicios.",
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Famiq\\PinPermisos\\": "php/src/"
+        }
+    }
+}
