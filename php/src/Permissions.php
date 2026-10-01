@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.1.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.2.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 namespace Famiq\PinPermisos;
@@ -172,6 +172,23 @@ enum Permissions: string
     case SegmentsSegmentEdit = 'segments.segment.edit';
     case SegmentsSegmentDelete = 'segments.segment.delete';
     case EmpresasIndex = 'empresas.index';
+    case HeaderLinksIndex = 'header-links.index';
+    case HeaderLinksCreate = 'header-links.create';
+    case HeaderLinksLinkEdit = 'header-links.link.edit';
+    case HeaderLinksLinkDelete = 'header-links.link.delete';
+    case InfoLibraryIndex = 'info.library.index';
+    case InfoLibraryCollectionsIndex = 'info.library.collections.index';
+    case InfoLibraryCollectionsCreate = 'info.library.collections.create';
+    case InfoLibraryCollectionsCollectionEdit = 'info.library.collections.collection.edit';
+    case InfoLibraryCollectionsCollectionDelete = 'info.library.collections.collection.delete';
+    case InfoLibraryArticlesIndex = 'info.library.articles.index';
+    case InfoLibraryArticlesCreate = 'info.library.articles.create';
+    case InfoLibraryArticlesArticleEdit = 'info.library.articles.article.edit';
+    case InfoLibraryArticlesArticleDelete = 'info.library.articles.article.delete';
+    case InfoFactsIndex = 'info.facts.index';
+    case InfoFactsCreate = 'info.facts.create';
+    case InfoFactsFactEdit = 'info.facts.fact.edit';
+    case InfoFactsFactDelete = 'info.facts.fact.delete';
 
     /** El atributo tal como se pregunta en isGranted(), IsGranted y is_granted(). */
     public function attr(): string
@@ -345,6 +362,23 @@ enum Permissions: string
             self::SegmentsSegmentEdit => 'Editar Segmento',
             self::SegmentsSegmentDelete => 'Eliminar Segmento',
             self::EmpresasIndex => 'Ver Empresas',
+            self::HeaderLinksIndex => 'Ver Links del header',
+            self::HeaderLinksCreate => 'Crear Links del header',
+            self::HeaderLinksLinkEdit => 'Editar Links del header',
+            self::HeaderLinksLinkDelete => 'Eliminar Links del header',
+            self::InfoLibraryIndex => 'Ver Biblioteca',
+            self::InfoLibraryCollectionsIndex => 'Ver Colecciones',
+            self::InfoLibraryCollectionsCreate => 'Crear Colección',
+            self::InfoLibraryCollectionsCollectionEdit => 'Editar Colección',
+            self::InfoLibraryCollectionsCollectionDelete => 'Eliminar Colección',
+            self::InfoLibraryArticlesIndex => 'Ver Artículos',
+            self::InfoLibraryArticlesCreate => 'Crear Artículo',
+            self::InfoLibraryArticlesArticleEdit => 'Editar Artículo',
+            self::InfoLibraryArticlesArticleDelete => 'Eliminar Artículo',
+            self::InfoFactsIndex => 'Ver ¿Sabías qué?',
+            self::InfoFactsCreate => 'Crear dato',
+            self::InfoFactsFactEdit => 'Editar dato',
+            self::InfoFactsFactDelete => 'Eliminar dato',
         };
     }
 
@@ -504,6 +538,23 @@ enum Permissions: string
             self::SegmentsSegmentEdit => 'Editar Segmento',
             self::SegmentsSegmentDelete => 'Eliminar Segmento',
             self::EmpresasIndex => 'Listado de Empresas',
+            self::HeaderLinksIndex => 'Listado de Links del header',
+            self::HeaderLinksCreate => 'Crear Links del header',
+            self::HeaderLinksLinkEdit => 'Editar Links del header',
+            self::HeaderLinksLinkDelete => 'Eliminar Links del header',
+            self::InfoLibraryIndex => 'La Biblioteca de Información técnica',
+            self::InfoLibraryCollectionsIndex => 'Listado de Colecciones',
+            self::InfoLibraryCollectionsCreate => 'Crear Colección',
+            self::InfoLibraryCollectionsCollectionEdit => 'Editar Colección',
+            self::InfoLibraryCollectionsCollectionDelete => 'Eliminar Colección',
+            self::InfoLibraryArticlesIndex => 'Listado de Artículos',
+            self::InfoLibraryArticlesCreate => 'Crear Artículo',
+            self::InfoLibraryArticlesArticleEdit => 'Editar Artículo',
+            self::InfoLibraryArticlesArticleDelete => 'Eliminar Artículo',
+            self::InfoFactsIndex => 'Listado de datos curiosos',
+            self::InfoFactsCreate => 'Crear dato curioso',
+            self::InfoFactsFactEdit => 'Editar dato curioso',
+            self::InfoFactsFactDelete => 'Eliminar dato curioso',
         };
     }
 
@@ -664,6 +715,23 @@ enum Permissions: string
             self::SegmentsSegmentEdit => 'gestion',
             self::SegmentsSegmentDelete => 'gestion',
             self::EmpresasIndex => 'gestion',
+            self::HeaderLinksIndex => 'gestion',
+            self::HeaderLinksCreate => 'gestion',
+            self::HeaderLinksLinkEdit => 'gestion',
+            self::HeaderLinksLinkDelete => 'gestion',
+            self::InfoLibraryIndex => 'gestion',
+            self::InfoLibraryCollectionsIndex => 'gestion',
+            self::InfoLibraryCollectionsCreate => 'gestion',
+            self::InfoLibraryCollectionsCollectionEdit => 'gestion',
+            self::InfoLibraryCollectionsCollectionDelete => 'gestion',
+            self::InfoLibraryArticlesIndex => 'gestion',
+            self::InfoLibraryArticlesCreate => 'gestion',
+            self::InfoLibraryArticlesArticleEdit => 'gestion',
+            self::InfoLibraryArticlesArticleDelete => 'gestion',
+            self::InfoFactsIndex => 'gestion',
+            self::InfoFactsCreate => 'gestion',
+            self::InfoFactsFactEdit => 'gestion',
+            self::InfoFactsFactDelete => 'gestion',
         };
     }
 
@@ -824,6 +892,23 @@ enum Permissions: string
             self::SegmentsSegmentEdit => 'Pantallas de gestión',
             self::SegmentsSegmentDelete => 'Pantallas de gestión',
             self::EmpresasIndex => 'Pantallas de gestión',
+            self::HeaderLinksIndex => 'Pantallas de gestión',
+            self::HeaderLinksCreate => 'Pantallas de gestión',
+            self::HeaderLinksLinkEdit => 'Pantallas de gestión',
+            self::HeaderLinksLinkDelete => 'Pantallas de gestión',
+            self::InfoLibraryIndex => 'Pantallas de gestión',
+            self::InfoLibraryCollectionsIndex => 'Pantallas de gestión',
+            self::InfoLibraryCollectionsCreate => 'Pantallas de gestión',
+            self::InfoLibraryCollectionsCollectionEdit => 'Pantallas de gestión',
+            self::InfoLibraryCollectionsCollectionDelete => 'Pantallas de gestión',
+            self::InfoLibraryArticlesIndex => 'Pantallas de gestión',
+            self::InfoLibraryArticlesCreate => 'Pantallas de gestión',
+            self::InfoLibraryArticlesArticleEdit => 'Pantallas de gestión',
+            self::InfoLibraryArticlesArticleDelete => 'Pantallas de gestión',
+            self::InfoFactsIndex => 'Pantallas de gestión',
+            self::InfoFactsCreate => 'Pantallas de gestión',
+            self::InfoFactsFactEdit => 'Pantallas de gestión',
+            self::InfoFactsFactDelete => 'Pantallas de gestión',
         };
     }
 }

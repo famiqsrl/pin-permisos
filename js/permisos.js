@@ -1,4 +1,4 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.1.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.2.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 export const PREFIJO = 'PERM_';
@@ -158,6 +158,23 @@ export const PERM = Object.freeze({
   SEGMENTS_SEGMENT_EDIT: "segments.segment.edit",
   SEGMENTS_SEGMENT_DELETE: "segments.segment.delete",
   EMPRESAS_INDEX: "empresas.index",
+  HEADER_LINKS_INDEX: "header-links.index",
+  HEADER_LINKS_CREATE: "header-links.create",
+  HEADER_LINKS_LINK_EDIT: "header-links.link.edit",
+  HEADER_LINKS_LINK_DELETE: "header-links.link.delete",
+  INFO_LIBRARY_INDEX: "info.library.index",
+  INFO_LIBRARY_COLLECTIONS_INDEX: "info.library.collections.index",
+  INFO_LIBRARY_COLLECTIONS_CREATE: "info.library.collections.create",
+  INFO_LIBRARY_COLLECTIONS_COLLECTION_EDIT: "info.library.collections.collection.edit",
+  INFO_LIBRARY_COLLECTIONS_COLLECTION_DELETE: "info.library.collections.collection.delete",
+  INFO_LIBRARY_ARTICLES_INDEX: "info.library.articles.index",
+  INFO_LIBRARY_ARTICLES_CREATE: "info.library.articles.create",
+  INFO_LIBRARY_ARTICLES_ARTICLE_EDIT: "info.library.articles.article.edit",
+  INFO_LIBRARY_ARTICLES_ARTICLE_DELETE: "info.library.articles.article.delete",
+  INFO_FACTS_INDEX: "info.facts.index",
+  INFO_FACTS_CREATE: "info.facts.create",
+  INFO_FACTS_FACT_EDIT: "info.facts.fact.edit",
+  INFO_FACTS_FACT_DELETE: "info.facts.fact.delete",
 });
 
 export const CATALOGO = Object.freeze([
@@ -1229,6 +1246,125 @@ export const CATALOGO = Object.freeze([
         "slug": "empresas.index",
         "nombre": "Ver Empresas",
         "descripcion": "Listado de Empresas",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "header-links.index",
+        "nombre": "Ver Links del header",
+        "descripcion": "Listado de Links del header",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "header-links.create",
+        "nombre": "Crear Links del header",
+        "descripcion": "Crear Links del header",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "header-links.link.edit",
+        "nombre": "Editar Links del header",
+        "descripcion": "Editar Links del header",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "header-links.link.delete",
+        "nombre": "Eliminar Links del header",
+        "descripcion": "Eliminar Links del header",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.library.index",
+        "nombre": "Ver Biblioteca",
+        "descripcion": "La Biblioteca de Información técnica",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.library.collections.index",
+        "nombre": "Ver Colecciones",
+        "descripcion": "Listado de Colecciones",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.library.collections.create",
+        "nombre": "Crear Colección",
+        "descripcion": "Crear Colección",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.library.collections.collection.edit",
+        "nombre": "Editar Colección",
+        "descripcion": "Editar Colección",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.library.collections.collection.delete",
+        "nombre": "Eliminar Colección",
+        "descripcion": "Eliminar Colección",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.library.articles.index",
+        "nombre": "Ver Artículos",
+        "descripcion": "Listado de Artículos",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.library.articles.create",
+        "nombre": "Crear Artículo",
+        "descripcion": "Crear Artículo",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.library.articles.article.edit",
+        "nombre": "Editar Artículo",
+        "descripcion": "Editar Artículo",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.library.articles.article.delete",
+        "nombre": "Eliminar Artículo",
+        "descripcion": "Eliminar Artículo",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.facts.index",
+        "nombre": "Ver ¿Sabías qué?",
+        "descripcion": "Listado de datos curiosos",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.facts.create",
+        "nombre": "Crear dato",
+        "descripcion": "Crear dato curioso",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.facts.fact.edit",
+        "nombre": "Editar dato",
+        "descripcion": "Editar dato curioso",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "info.facts.fact.delete",
+        "nombre": "Eliminar dato",
+        "descripcion": "Eliminar dato curioso",
         "modulo": "gestion",
         "grupo": "Pantallas de gestión"
     }
