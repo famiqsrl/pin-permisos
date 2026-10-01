@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.0.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.1.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 namespace Famiq\PinPermisos;
@@ -39,6 +39,8 @@ enum Permissions: string
     case CatalogoVerDatosTecnicos = 'catalogo.ver_datos_tecnicos';
     case RecortesVerDepositoOrigen = 'recortes.ver_deposito_origen';
     case PoliticaPreciosDescargar = 'politica_precios.descargar';
+    case ProductoVerPrecioSinDescuento = 'producto.ver_precio_sin_descuento';
+    case CatalogoVerComoComprar = 'catalogo.ver_como_comprar';
     case ListasUsar = 'listas.usar';
     case ListasCrearFamiq = 'listas.crear_famiq';
     case ListasEditarFamiq = 'listas.editar_famiq';
@@ -55,6 +57,7 @@ enum Permissions: string
     case CarritoRecuperarSinForzarCentro = 'carrito.recuperar_sin_forzar_centro';
     case CuponesUsar = 'cupones.usar';
     case EnvioBonificar = 'envio.bonificar';
+    case CarritoAgregar = 'carrito.agregar';
     case CotizacionGuardarEnCualquierPaso = 'cotizacion.guardar_en_cualquier_paso';
     case PedidoEmitir = 'pedido.emitir';
     case PedidoExigirMailConfirmacion = 'pedido.exigir_mail_confirmacion';
@@ -65,6 +68,7 @@ enum Permissions: string
     case PagoCondicionesAdicionales = 'pago.condiciones_adicionales';
     case PagoCambiarMoneda = 'pago.cambiar_moneda';
     case PedidoVerMuestrasGratis = 'pedido.ver_muestras_gratis';
+    case PedidoVerAvisoPago = 'pedido.ver_aviso_pago';
     case DocumentoElegirPosiciones = 'documento.elegir_posiciones';
     case DocumentoCopiarCotizacion = 'documento.copiar_cotizacion';
     case DocumentoActualizarOfertaEspecial = 'documento.actualizar_oferta_especial';
@@ -208,6 +212,8 @@ enum Permissions: string
             self::CatalogoVerDatosTecnicos => 'Ver datos técnicos internos',
             self::RecortesVerDepositoOrigen => 'Ver depósito de origen en recortes',
             self::PoliticaPreciosDescargar => 'Descargar política de precios',
+            self::ProductoVerPrecioSinDescuento => 'Ver precio sin descuento por presentación',
+            self::CatalogoVerComoComprar => 'Ver cómo comprar',
             self::ListasUsar => 'Usar listas y favoritos',
             self::ListasCrearFamiq => 'Crear listas Famiq',
             self::ListasEditarFamiq => 'Editar listas Famiq',
@@ -224,6 +230,7 @@ enum Permissions: string
             self::CarritoRecuperarSinForzarCentro => 'Recuperar carrito sin forzar centro',
             self::CuponesUsar => 'Cupones',
             self::EnvioBonificar => 'Bonificar envío y embalaje',
+            self::CarritoAgregar => 'Agregar productos al carrito',
             self::CotizacionGuardarEnCualquierPaso => 'Guardar cotización en cualquier paso',
             self::PedidoEmitir => 'Emitir pedidos',
             self::PedidoExigirMailConfirmacion => 'Exigir mail de confirmación',
@@ -234,6 +241,7 @@ enum Permissions: string
             self::PagoCondicionesAdicionales => 'Condiciones de pago adicionales',
             self::PagoCambiarMoneda => 'Cambiar moneda de pago',
             self::PedidoVerMuestrasGratis => 'Ver pedidos de muestra gratis',
+            self::PedidoVerAvisoPago => 'Ver avisos de pago al cliente',
             self::DocumentoElegirPosiciones => 'Elegir posiciones de una cotización',
             self::DocumentoCopiarCotizacion => 'Copiar cotización',
             self::DocumentoActualizarOfertaEspecial => 'Actualizar oferta especial vencida',
@@ -363,6 +371,8 @@ enum Permissions: string
             self::CatalogoVerDatosTecnicos => 'El ID de material y datos técnicos sobre la imagen.',
             self::RecortesVerDepositoOrigen => 'La columna Depósito de Origen en recortes de tubo.',
             self::PoliticaPreciosDescargar => 'El Excel de política de precios.',
+            self::ProductoVerPrecioSinDescuento => 'El precio sin descuento según la presentación del producto.',
+            self::CatalogoVerComoComprar => 'El bloque "cómo comprar" del pie de página.',
             self::ListasUsar => 'Marcar favoritos y usar listas.',
             self::ListasCrearFamiq => 'Las listas que crea son de Famiq y no personales.',
             self::ListasEditarFamiq => 'Hoy lo decide un mail hardcodeado; pasa a permiso directo de esas personas.',
@@ -379,6 +389,7 @@ enum Permissions: string
             self::CarritoRecuperarSinForzarCentro => 'Recuperar desde un documento manteniendo sus centros.',
             self::CuponesUsar => 'Ver y aplicar cupones.',
             self::EnvioBonificar => 'Bonificar gastos de envío y embalaje.',
+            self::CarritoAgregar => 'Agregar productos al carrito desde el catálogo y el detalle.',
             self::CotizacionGuardarEnCualquierPaso => 'Los demás solo guardan en el paso 2.',
             self::PedidoEmitir => 'Emitir el pedido desde el carrito. Hoy el responsable de cuenta no puede.',
             self::PedidoExigirMailConfirmacion => 'Pide elegir el mail al que se envía la confirmación.',
@@ -389,6 +400,7 @@ enum Permissions: string
             self::PagoCondicionesAdicionales => 'Anticipo, otras condiciones y cambiar la condición del documento.',
             self::PagoCambiarMoneda => 'Hoy es Desarrollador y dos mails hardcodeados, que pasan a permiso directo.',
             self::PedidoVerMuestrasGratis => 'Ver y abrir pedidos de muestra gratis.',
+            self::PedidoVerAvisoPago => 'Avisos de pago que se muestran solo a clientes al confirmar.',
             self::DocumentoElegirPosiciones => 'Elegir qué posiciones pasar al carrito.',
             self::DocumentoCopiarCotizacion => 'Copiar y dar de alta por parecido.',
             self::DocumentoActualizarOfertaEspecial => 'Actualizar una oferta especial ya vencida.',
@@ -519,6 +531,8 @@ enum Permissions: string
             self::CatalogoVerDatosTecnicos => 'pin',
             self::RecortesVerDepositoOrigen => 'pin',
             self::PoliticaPreciosDescargar => 'pin',
+            self::ProductoVerPrecioSinDescuento => 'pin',
+            self::CatalogoVerComoComprar => 'pin',
             self::ListasUsar => 'pin',
             self::ListasCrearFamiq => 'pin',
             self::ListasEditarFamiq => 'pin',
@@ -535,6 +549,7 @@ enum Permissions: string
             self::CarritoRecuperarSinForzarCentro => 'pin',
             self::CuponesUsar => 'pin',
             self::EnvioBonificar => 'pin',
+            self::CarritoAgregar => 'pin',
             self::CotizacionGuardarEnCualquierPaso => 'pin',
             self::PedidoEmitir => 'pin',
             self::PedidoExigirMailConfirmacion => 'pin',
@@ -545,6 +560,7 @@ enum Permissions: string
             self::PagoCondicionesAdicionales => 'pin',
             self::PagoCambiarMoneda => 'pin',
             self::PedidoVerMuestrasGratis => 'pin',
+            self::PedidoVerAvisoPago => 'pin',
             self::DocumentoElegirPosiciones => 'pin',
             self::DocumentoCopiarCotizacion => 'pin',
             self::DocumentoActualizarOfertaEspecial => 'pin',
@@ -675,6 +691,8 @@ enum Permissions: string
             self::CatalogoVerDatosTecnicos => 'Catálogo y producto',
             self::RecortesVerDepositoOrigen => 'Catálogo y producto',
             self::PoliticaPreciosDescargar => 'Catálogo y producto',
+            self::ProductoVerPrecioSinDescuento => 'Catálogo y producto',
+            self::CatalogoVerComoComprar => 'Catálogo y producto',
             self::ListasUsar => 'Listas y favoritos',
             self::ListasCrearFamiq => 'Listas y favoritos',
             self::ListasEditarFamiq => 'Listas y favoritos',
@@ -691,6 +709,7 @@ enum Permissions: string
             self::CarritoRecuperarSinForzarCentro => 'Carrito',
             self::CuponesUsar => 'Carrito',
             self::EnvioBonificar => 'Carrito',
+            self::CarritoAgregar => 'Carrito',
             self::CotizacionGuardarEnCualquierPaso => 'Cotizaciones y pedidos',
             self::PedidoEmitir => 'Cotizaciones y pedidos',
             self::PedidoExigirMailConfirmacion => 'Cotizaciones y pedidos',
@@ -701,6 +720,7 @@ enum Permissions: string
             self::PagoCondicionesAdicionales => 'Cotizaciones y pedidos',
             self::PagoCambiarMoneda => 'Cotizaciones y pedidos',
             self::PedidoVerMuestrasGratis => 'Cotizaciones y pedidos',
+            self::PedidoVerAvisoPago => 'Cotizaciones y pedidos',
             self::DocumentoElegirPosiciones => 'Documentos',
             self::DocumentoCopiarCotizacion => 'Documentos',
             self::DocumentoActualizarOfertaEspecial => 'Documentos',

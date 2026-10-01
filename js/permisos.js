@@ -1,4 +1,4 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.0.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.1.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 export const PREFIJO = 'PERM_';
@@ -25,6 +25,8 @@ export const PERM = Object.freeze({
   CATALOGO_VER_DATOS_TECNICOS: "catalogo.ver_datos_tecnicos",
   RECORTES_VER_DEPOSITO_ORIGEN: "recortes.ver_deposito_origen",
   POLITICA_PRECIOS_DESCARGAR: "politica_precios.descargar",
+  PRODUCTO_VER_PRECIO_SIN_DESCUENTO: "producto.ver_precio_sin_descuento",
+  CATALOGO_VER_COMO_COMPRAR: "catalogo.ver_como_comprar",
   LISTAS_USAR: "listas.usar",
   LISTAS_CREAR_FAMIQ: "listas.crear_famiq",
   LISTAS_EDITAR_FAMIQ: "listas.editar_famiq",
@@ -41,6 +43,7 @@ export const PERM = Object.freeze({
   CARRITO_RECUPERAR_SIN_FORZAR_CENTRO: "carrito.recuperar_sin_forzar_centro",
   CUPONES_USAR: "cupones.usar",
   ENVIO_BONIFICAR: "envio.bonificar",
+  CARRITO_AGREGAR: "carrito.agregar",
   COTIZACION_GUARDAR_EN_CUALQUIER_PASO: "cotizacion.guardar_en_cualquier_paso",
   PEDIDO_EMITIR: "pedido.emitir",
   PEDIDO_EXIGIR_MAIL_CONFIRMACION: "pedido.exigir_mail_confirmacion",
@@ -51,6 +54,7 @@ export const PERM = Object.freeze({
   PAGO_CONDICIONES_ADICIONALES: "pago.condiciones_adicionales",
   PAGO_CAMBIAR_MONEDA: "pago.cambiar_moneda",
   PEDIDO_VER_MUESTRAS_GRATIS: "pedido.ver_muestras_gratis",
+  PEDIDO_VER_AVISO_PAGO: "pedido.ver_aviso_pago",
   DOCUMENTO_ELEGIR_POSICIONES: "documento.elegir_posiciones",
   DOCUMENTO_COPIAR_COTIZACION: "documento.copiar_cotizacion",
   DOCUMENTO_ACTUALIZAR_OFERTA_ESPECIAL: "documento.actualizar_oferta_especial",
@@ -298,6 +302,20 @@ export const CATALOGO = Object.freeze([
         "grupo": "Catálogo y producto"
     },
     {
+        "slug": "producto.ver_precio_sin_descuento",
+        "nombre": "Ver precio sin descuento por presentación",
+        "descripcion": "El precio sin descuento según la presentación del producto.",
+        "modulo": "pin",
+        "grupo": "Catálogo y producto"
+    },
+    {
+        "slug": "catalogo.ver_como_comprar",
+        "nombre": "Ver cómo comprar",
+        "descripcion": "El bloque \"cómo comprar\" del pie de página.",
+        "modulo": "pin",
+        "grupo": "Catálogo y producto"
+    },
+    {
         "slug": "listas.usar",
         "nombre": "Usar listas y favoritos",
         "descripcion": "Marcar favoritos y usar listas.",
@@ -410,6 +428,13 @@ export const CATALOGO = Object.freeze([
         "grupo": "Carrito"
     },
     {
+        "slug": "carrito.agregar",
+        "nombre": "Agregar productos al carrito",
+        "descripcion": "Agregar productos al carrito desde el catálogo y el detalle.",
+        "modulo": "pin",
+        "grupo": "Carrito"
+    },
+    {
         "slug": "cotizacion.guardar_en_cualquier_paso",
         "nombre": "Guardar cotización en cualquier paso",
         "descripcion": "Los demás solo guardan en el paso 2.",
@@ -476,6 +501,13 @@ export const CATALOGO = Object.freeze([
         "slug": "pedido.ver_muestras_gratis",
         "nombre": "Ver pedidos de muestra gratis",
         "descripcion": "Ver y abrir pedidos de muestra gratis.",
+        "modulo": "pin",
+        "grupo": "Cotizaciones y pedidos"
+    },
+    {
+        "slug": "pedido.ver_aviso_pago",
+        "nombre": "Ver avisos de pago al cliente",
+        "descripcion": "Avisos de pago que se muestran solo a clientes al confirmar.",
         "modulo": "pin",
         "grupo": "Cotizaciones y pedidos"
     },

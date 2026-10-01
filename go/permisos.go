@@ -1,4 +1,4 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.0.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.1.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 // Package permisos expone el catálogo de permisos de la PIN.
@@ -29,6 +29,8 @@ const (
 	CatalogoVerDatosTecnicos             = "catalogo.ver_datos_tecnicos"
 	RecortesVerDepositoOrigen            = "recortes.ver_deposito_origen"
 	PoliticaPreciosDescargar             = "politica_precios.descargar"
+	ProductoVerPrecioSinDescuento        = "producto.ver_precio_sin_descuento"
+	CatalogoVerComoComprar               = "catalogo.ver_como_comprar"
 	ListasUsar                           = "listas.usar"
 	ListasCrearFamiq                     = "listas.crear_famiq"
 	ListasEditarFamiq                    = "listas.editar_famiq"
@@ -45,6 +47,7 @@ const (
 	CarritoRecuperarSinForzarCentro      = "carrito.recuperar_sin_forzar_centro"
 	CuponesUsar                          = "cupones.usar"
 	EnvioBonificar                       = "envio.bonificar"
+	CarritoAgregar                       = "carrito.agregar"
 	CotizacionGuardarEnCualquierPaso     = "cotizacion.guardar_en_cualquier_paso"
 	PedidoEmitir                         = "pedido.emitir"
 	PedidoExigirMailConfirmacion         = "pedido.exigir_mail_confirmacion"
@@ -55,6 +58,7 @@ const (
 	PagoCondicionesAdicionales           = "pago.condiciones_adicionales"
 	PagoCambiarMoneda                    = "pago.cambiar_moneda"
 	PedidoVerMuestrasGratis              = "pedido.ver_muestras_gratis"
+	PedidoVerAvisoPago                   = "pedido.ver_aviso_pago"
 	DocumentoElegirPosiciones            = "documento.elegir_posiciones"
 	DocumentoCopiarCotizacion            = "documento.copiar_cotizacion"
 	DocumentoActualizarOfertaEspecial    = "documento.actualizar_oferta_especial"
@@ -191,6 +195,8 @@ var Catalogo = []Permiso{
 	{Slug: CatalogoVerDatosTecnicos, Nombre: "Ver datos técnicos internos", Descripcion: "El ID de material y datos técnicos sobre la imagen.", Modulo: "pin", Grupo: "Catálogo y producto"},
 	{Slug: RecortesVerDepositoOrigen, Nombre: "Ver depósito de origen en recortes", Descripcion: "La columna Depósito de Origen en recortes de tubo.", Modulo: "pin", Grupo: "Catálogo y producto"},
 	{Slug: PoliticaPreciosDescargar, Nombre: "Descargar política de precios", Descripcion: "El Excel de política de precios.", Modulo: "pin", Grupo: "Catálogo y producto"},
+	{Slug: ProductoVerPrecioSinDescuento, Nombre: "Ver precio sin descuento por presentación", Descripcion: "El precio sin descuento según la presentación del producto.", Modulo: "pin", Grupo: "Catálogo y producto"},
+	{Slug: CatalogoVerComoComprar, Nombre: "Ver cómo comprar", Descripcion: "El bloque \"cómo comprar\" del pie de página.", Modulo: "pin", Grupo: "Catálogo y producto"},
 	{Slug: ListasUsar, Nombre: "Usar listas y favoritos", Descripcion: "Marcar favoritos y usar listas.", Modulo: "pin", Grupo: "Listas y favoritos"},
 	{Slug: ListasCrearFamiq, Nombre: "Crear listas Famiq", Descripcion: "Las listas que crea son de Famiq y no personales.", Modulo: "pin", Grupo: "Listas y favoritos"},
 	{Slug: ListasEditarFamiq, Nombre: "Editar listas Famiq", Descripcion: "Hoy lo decide un mail hardcodeado; pasa a permiso directo de esas personas.", Modulo: "pin", Grupo: "Listas y favoritos"},
@@ -207,6 +213,7 @@ var Catalogo = []Permiso{
 	{Slug: CarritoRecuperarSinForzarCentro, Nombre: "Recuperar carrito sin forzar centro", Descripcion: "Recuperar desde un documento manteniendo sus centros.", Modulo: "pin", Grupo: "Carrito"},
 	{Slug: CuponesUsar, Nombre: "Cupones", Descripcion: "Ver y aplicar cupones.", Modulo: "pin", Grupo: "Carrito"},
 	{Slug: EnvioBonificar, Nombre: "Bonificar envío y embalaje", Descripcion: "Bonificar gastos de envío y embalaje.", Modulo: "pin", Grupo: "Carrito"},
+	{Slug: CarritoAgregar, Nombre: "Agregar productos al carrito", Descripcion: "Agregar productos al carrito desde el catálogo y el detalle.", Modulo: "pin", Grupo: "Carrito"},
 	{Slug: CotizacionGuardarEnCualquierPaso, Nombre: "Guardar cotización en cualquier paso", Descripcion: "Los demás solo guardan en el paso 2.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
 	{Slug: PedidoEmitir, Nombre: "Emitir pedidos", Descripcion: "Emitir el pedido desde el carrito. Hoy el responsable de cuenta no puede.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
 	{Slug: PedidoExigirMailConfirmacion, Nombre: "Exigir mail de confirmación", Descripcion: "Pide elegir el mail al que se envía la confirmación.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
@@ -217,6 +224,7 @@ var Catalogo = []Permiso{
 	{Slug: PagoCondicionesAdicionales, Nombre: "Condiciones de pago adicionales", Descripcion: "Anticipo, otras condiciones y cambiar la condición del documento.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
 	{Slug: PagoCambiarMoneda, Nombre: "Cambiar moneda de pago", Descripcion: "Hoy es Desarrollador y dos mails hardcodeados, que pasan a permiso directo.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
 	{Slug: PedidoVerMuestrasGratis, Nombre: "Ver pedidos de muestra gratis", Descripcion: "Ver y abrir pedidos de muestra gratis.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
+	{Slug: PedidoVerAvisoPago, Nombre: "Ver avisos de pago al cliente", Descripcion: "Avisos de pago que se muestran solo a clientes al confirmar.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
 	{Slug: DocumentoElegirPosiciones, Nombre: "Elegir posiciones de una cotización", Descripcion: "Elegir qué posiciones pasar al carrito.", Modulo: "pin", Grupo: "Documentos"},
 	{Slug: DocumentoCopiarCotizacion, Nombre: "Copiar cotización", Descripcion: "Copiar y dar de alta por parecido.", Modulo: "pin", Grupo: "Documentos"},
 	{Slug: DocumentoActualizarOfertaEspecial, Nombre: "Actualizar oferta especial vencida", Descripcion: "Actualizar una oferta especial ya vencida.", Modulo: "pin", Grupo: "Documentos"},
