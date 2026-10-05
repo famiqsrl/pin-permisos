@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.0
+
+- `cotizacion.crear` (guardar o enviar una oferta común desde el carrito) y
+  `cotizacion.crear_especial` (agregar productos a medida MVSE, que generan una
+  oferta especial).
+
 ## 1.2.0
 
 - 17 permisos de gestion para las pantallas nuevas: links del header

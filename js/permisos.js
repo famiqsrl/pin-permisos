@@ -1,4 +1,4 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.2.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.3.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 export const PREFIJO = 'PERM_';
@@ -45,6 +45,8 @@ export const PERM = Object.freeze({
   ENVIO_BONIFICAR: "envio.bonificar",
   CARRITO_AGREGAR: "carrito.agregar",
   COTIZACION_GUARDAR_EN_CUALQUIER_PASO: "cotizacion.guardar_en_cualquier_paso",
+  COTIZACION_CREAR: "cotizacion.crear",
+  COTIZACION_CREAR_ESPECIAL: "cotizacion.crear_especial",
   PEDIDO_EMITIR: "pedido.emitir",
   PEDIDO_EXIGIR_MAIL_CONFIRMACION: "pedido.exigir_mail_confirmacion",
   PEDIDO_FINALIDAD: "pedido.finalidad",
@@ -455,6 +457,20 @@ export const CATALOGO = Object.freeze([
         "slug": "cotizacion.guardar_en_cualquier_paso",
         "nombre": "Guardar cotización en cualquier paso",
         "descripcion": "Los demás solo guardan en el paso 2.",
+        "modulo": "pin",
+        "grupo": "Cotizaciones y pedidos"
+    },
+    {
+        "slug": "cotizacion.crear",
+        "nombre": "Crear ofertas comunes",
+        "descripcion": "Guardar o enviar una cotización u oferta común desde el carrito.",
+        "modulo": "pin",
+        "grupo": "Cotizaciones y pedidos"
+    },
+    {
+        "slug": "cotizacion.crear_especial",
+        "nombre": "Crear ofertas especiales",
+        "descripcion": "Agregar productos a medida (MVSE), que convierten el carrito en una oferta especial.",
         "modulo": "pin",
         "grupo": "Cotizaciones y pedidos"
     },

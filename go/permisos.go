@@ -1,4 +1,4 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.2.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.3.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 // Package permisos expone el catálogo de permisos de la PIN.
@@ -49,6 +49,8 @@ const (
 	EnvioBonificar                         = "envio.bonificar"
 	CarritoAgregar                         = "carrito.agregar"
 	CotizacionGuardarEnCualquierPaso       = "cotizacion.guardar_en_cualquier_paso"
+	CotizacionCrear                        = "cotizacion.crear"
+	CotizacionCrearEspecial                = "cotizacion.crear_especial"
 	PedidoEmitir                           = "pedido.emitir"
 	PedidoExigirMailConfirmacion           = "pedido.exigir_mail_confirmacion"
 	PedidoFinalidad                        = "pedido.finalidad"
@@ -232,6 +234,8 @@ var Catalogo = []Permiso{
 	{Slug: EnvioBonificar, Nombre: "Bonificar envío y embalaje", Descripcion: "Bonificar gastos de envío y embalaje.", Modulo: "pin", Grupo: "Carrito"},
 	{Slug: CarritoAgregar, Nombre: "Agregar productos al carrito", Descripcion: "Agregar productos al carrito desde el catálogo y el detalle.", Modulo: "pin", Grupo: "Carrito"},
 	{Slug: CotizacionGuardarEnCualquierPaso, Nombre: "Guardar cotización en cualquier paso", Descripcion: "Los demás solo guardan en el paso 2.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
+	{Slug: CotizacionCrear, Nombre: "Crear ofertas comunes", Descripcion: "Guardar o enviar una cotización u oferta común desde el carrito.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
+	{Slug: CotizacionCrearEspecial, Nombre: "Crear ofertas especiales", Descripcion: "Agregar productos a medida (MVSE), que convierten el carrito en una oferta especial.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
 	{Slug: PedidoEmitir, Nombre: "Emitir pedidos", Descripcion: "Emitir el pedido desde el carrito. Hoy el responsable de cuenta no puede.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
 	{Slug: PedidoExigirMailConfirmacion, Nombre: "Exigir mail de confirmación", Descripcion: "Pide elegir el mail al que se envía la confirmación.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},
 	{Slug: PedidoFinalidad, Nombre: "Finalidad del pedido", Descripcion: "Cargar la finalidad del pedido.", Modulo: "pin", Grupo: "Cotizaciones y pedidos"},

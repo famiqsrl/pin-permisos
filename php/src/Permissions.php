@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.2.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.3.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 namespace Famiq\PinPermisos;
@@ -59,6 +59,8 @@ enum Permissions: string
     case EnvioBonificar = 'envio.bonificar';
     case CarritoAgregar = 'carrito.agregar';
     case CotizacionGuardarEnCualquierPaso = 'cotizacion.guardar_en_cualquier_paso';
+    case CotizacionCrear = 'cotizacion.crear';
+    case CotizacionCrearEspecial = 'cotizacion.crear_especial';
     case PedidoEmitir = 'pedido.emitir';
     case PedidoExigirMailConfirmacion = 'pedido.exigir_mail_confirmacion';
     case PedidoFinalidad = 'pedido.finalidad';
@@ -249,6 +251,8 @@ enum Permissions: string
             self::EnvioBonificar => 'Bonificar envío y embalaje',
             self::CarritoAgregar => 'Agregar productos al carrito',
             self::CotizacionGuardarEnCualquierPaso => 'Guardar cotización en cualquier paso',
+            self::CotizacionCrear => 'Crear ofertas comunes',
+            self::CotizacionCrearEspecial => 'Crear ofertas especiales',
             self::PedidoEmitir => 'Emitir pedidos',
             self::PedidoExigirMailConfirmacion => 'Exigir mail de confirmación',
             self::PedidoFinalidad => 'Finalidad del pedido',
@@ -425,6 +429,8 @@ enum Permissions: string
             self::EnvioBonificar => 'Bonificar gastos de envío y embalaje.',
             self::CarritoAgregar => 'Agregar productos al carrito desde el catálogo y el detalle.',
             self::CotizacionGuardarEnCualquierPaso => 'Los demás solo guardan en el paso 2.',
+            self::CotizacionCrear => 'Guardar o enviar una cotización u oferta común desde el carrito.',
+            self::CotizacionCrearEspecial => 'Agregar productos a medida (MVSE), que convierten el carrito en una oferta especial.',
             self::PedidoEmitir => 'Emitir el pedido desde el carrito. Hoy el responsable de cuenta no puede.',
             self::PedidoExigirMailConfirmacion => 'Pide elegir el mail al que se envía la confirmación.',
             self::PedidoFinalidad => 'Cargar la finalidad del pedido.',
@@ -602,6 +608,8 @@ enum Permissions: string
             self::EnvioBonificar => 'pin',
             self::CarritoAgregar => 'pin',
             self::CotizacionGuardarEnCualquierPaso => 'pin',
+            self::CotizacionCrear => 'pin',
+            self::CotizacionCrearEspecial => 'pin',
             self::PedidoEmitir => 'pin',
             self::PedidoExigirMailConfirmacion => 'pin',
             self::PedidoFinalidad => 'pin',
@@ -779,6 +787,8 @@ enum Permissions: string
             self::EnvioBonificar => 'Carrito',
             self::CarritoAgregar => 'Carrito',
             self::CotizacionGuardarEnCualquierPaso => 'Cotizaciones y pedidos',
+            self::CotizacionCrear => 'Cotizaciones y pedidos',
+            self::CotizacionCrearEspecial => 'Cotizaciones y pedidos',
             self::PedidoEmitir => 'Cotizaciones y pedidos',
             self::PedidoExigirMailConfirmacion => 'Cotizaciones y pedidos',
             self::PedidoFinalidad => 'Cotizaciones y pedidos',
