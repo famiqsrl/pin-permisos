@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.4.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.5.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 namespace Famiq\PinPermisos;
@@ -104,6 +104,8 @@ enum Permissions: string
     case SistemaDebugCarrito = 'sistema.debug_carrito';
     case SistemaMarcasDesarrollo = 'sistema.marcas_desarrollo';
     case SistemaNoInformarUsuarioSap = 'sistema.no_informar_usuario_sap';
+    case TotemGenerarTicket = 'totem.generar_ticket';
+    case TotemVerTicketsEnEspera = 'totem.ver_tickets_en_espera';
     case ProductoMantenimiento = 'producto.mantenimiento';
     case GestionIngresar = 'gestion.ingresar';
     case RolesAdministrar = 'roles.administrar';
@@ -298,6 +300,8 @@ enum Permissions: string
             self::SistemaDebugCarrito => 'Debug del carrito',
             self::SistemaMarcasDesarrollo => 'Marcas de desarrollo en pantalla',
             self::SistemaNoInformarUsuarioSap => 'No informar el usuario a SAP',
+            self::TotemGenerarTicket => 'Generar ticket del tótem',
+            self::TotemVerTicketsEnEspera => 'Ver tickets en espera del tótem',
             self::ProductoMantenimiento => 'Mantenimiento de productos',
             self::GestionIngresar => 'Ingresar a gestión',
             self::RolesAdministrar => 'Administrar roles y permisos',
@@ -478,6 +482,8 @@ enum Permissions: string
             self::SistemaDebugCarrito => 'La herramienta de debug del carrito.',
             self::SistemaMarcasDesarrollo => 'Marcas técnicas en algunas pantallas.',
             self::SistemaNoInformarUsuarioSap => 'No envía el usuario web a SAP al consultar clientes.',
+            self::TotemGenerarTicket => 'Generar un ticket de prueba del tótem (NemoQ).',
+            self::TotemVerTicketsEnEspera => 'Consultar los tickets en espera del tótem (NemoQ).',
             self::ProductoMantenimiento => 'Actualizar un material desde SAP y regenerar el Excel de materiales.',
             self::GestionIngresar => 'Entrar a gestión.',
             self::RolesAdministrar => 'Las pantallas de roles y permisos.',
@@ -659,6 +665,8 @@ enum Permissions: string
             self::SistemaDebugCarrito => 'pin',
             self::SistemaMarcasDesarrollo => 'pin',
             self::SistemaNoInformarUsuarioSap => 'pin',
+            self::TotemGenerarTicket => 'pin',
+            self::TotemVerTicketsEnEspera => 'pin',
             self::ProductoMantenimiento => 'pin',
             self::GestionIngresar => 'gestion',
             self::RolesAdministrar => 'gestion',
@@ -840,6 +848,8 @@ enum Permissions: string
             self::SistemaDebugCarrito => 'Sistema',
             self::SistemaMarcasDesarrollo => 'Sistema',
             self::SistemaNoInformarUsuarioSap => 'Sistema',
+            self::TotemGenerarTicket => 'Sistema',
+            self::TotemVerTicketsEnEspera => 'Sistema',
             self::ProductoMantenimiento => 'Sistema',
             self::GestionIngresar => 'Gestión',
             self::RolesAdministrar => 'Gestión',

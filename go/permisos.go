@@ -1,4 +1,4 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.4.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.5.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 // Package permisos expone el catálogo de permisos de la PIN.
@@ -94,6 +94,8 @@ const (
 	SistemaDebugCarrito                    = "sistema.debug_carrito"
 	SistemaMarcasDesarrollo                = "sistema.marcas_desarrollo"
 	SistemaNoInformarUsuarioSap            = "sistema.no_informar_usuario_sap"
+	TotemGenerarTicket                     = "totem.generar_ticket"
+	TotemVerTicketsEnEspera                = "totem.ver_tickets_en_espera"
 	ProductoMantenimiento                  = "producto.mantenimiento"
 	GestionIngresar                        = "gestion.ingresar"
 	RolesAdministrar                       = "roles.administrar"
@@ -281,6 +283,8 @@ var Catalogo = []Permiso{
 	{Slug: SistemaDebugCarrito, Nombre: "Debug del carrito", Descripcion: "La herramienta de debug del carrito.", Modulo: "pin", Grupo: "Sistema"},
 	{Slug: SistemaMarcasDesarrollo, Nombre: "Marcas de desarrollo en pantalla", Descripcion: "Marcas técnicas en algunas pantallas.", Modulo: "pin", Grupo: "Sistema"},
 	{Slug: SistemaNoInformarUsuarioSap, Nombre: "No informar el usuario a SAP", Descripcion: "No envía el usuario web a SAP al consultar clientes.", Modulo: "pin", Grupo: "Sistema"},
+	{Slug: TotemGenerarTicket, Nombre: "Generar ticket del tótem", Descripcion: "Generar un ticket de prueba del tótem (NemoQ).", Modulo: "pin", Grupo: "Sistema"},
+	{Slug: TotemVerTicketsEnEspera, Nombre: "Ver tickets en espera del tótem", Descripcion: "Consultar los tickets en espera del tótem (NemoQ).", Modulo: "pin", Grupo: "Sistema"},
 	{Slug: ProductoMantenimiento, Nombre: "Mantenimiento de productos", Descripcion: "Actualizar un material desde SAP y regenerar el Excel de materiales.", Modulo: "pin", Grupo: "Sistema"},
 	{Slug: GestionIngresar, Nombre: "Ingresar a gestión", Descripcion: "Entrar a gestión.", Modulo: "gestion", Grupo: "Gestión"},
 	{Slug: RolesAdministrar, Nombre: "Administrar roles y permisos", Descripcion: "Las pantallas de roles y permisos.", Modulo: "gestion", Grupo: "Gestión"},

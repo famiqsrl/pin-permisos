@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.5.0",
   "prefijo_atributo": "PERM_",
   "modulos": {
     "pin": "PIN",
@@ -598,6 +598,20 @@
       "slug": "sistema.no_informar_usuario_sap",
       "nombre": "No informar el usuario a SAP",
       "descripcion": "No envía el usuario web a SAP al consultar clientes.",
+      "modulo": "pin",
+      "grupo": "Sistema"
+    },
+    {
+      "slug": "totem.generar_ticket",
+      "nombre": "Generar ticket del tótem",
+      "descripcion": "Generar un ticket de prueba del tótem (NemoQ).",
+      "modulo": "pin",
+      "grupo": "Sistema"
+    },
+    {
+      "slug": "totem.ver_tickets_en_espera",
+      "nombre": "Ver tickets en espera del tótem",
+      "descripcion": "Consultar los tickets en espera del tótem (NemoQ).",
       "modulo": "pin",
       "grupo": "Sistema"
     },

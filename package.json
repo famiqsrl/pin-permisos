@@ -1,6 +1,6 @@
 {
   "name": "@famiq/pin-permisos",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Catálogo de permisos de la PIN para JS / Vue.",
   "private": true,
   "type": "module",

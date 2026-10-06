@@ -1,4 +1,4 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.4.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.5.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 export const PREFIJO = 'PERM_';
@@ -90,6 +90,8 @@ export const PERM = Object.freeze({
   SISTEMA_DEBUG_CARRITO: "sistema.debug_carrito",
   SISTEMA_MARCAS_DESARROLLO: "sistema.marcas_desarrollo",
   SISTEMA_NO_INFORMAR_USUARIO_SAP: "sistema.no_informar_usuario_sap",
+  TOTEM_GENERAR_TICKET: "totem.generar_ticket",
+  TOTEM_VER_TICKETS_EN_ESPERA: "totem.ver_tickets_en_espera",
   PRODUCTO_MANTENIMIENTO: "producto.mantenimiento",
   GESTION_INGRESAR: "gestion.ingresar",
   ROLES_ADMINISTRAR: "roles.administrar",
@@ -774,6 +776,20 @@ export const CATALOGO = Object.freeze([
         "slug": "sistema.no_informar_usuario_sap",
         "nombre": "No informar el usuario a SAP",
         "descripcion": "No envía el usuario web a SAP al consultar clientes.",
+        "modulo": "pin",
+        "grupo": "Sistema"
+    },
+    {
+        "slug": "totem.generar_ticket",
+        "nombre": "Generar ticket del tótem",
+        "descripcion": "Generar un ticket de prueba del tótem (NemoQ).",
+        "modulo": "pin",
+        "grupo": "Sistema"
+    },
+    {
+        "slug": "totem.ver_tickets_en_espera",
+        "nombre": "Ver tickets en espera del tótem",
+        "descripcion": "Consultar los tickets en espera del tótem (NemoQ).",
         "modulo": "pin",
         "grupo": "Sistema"
     },

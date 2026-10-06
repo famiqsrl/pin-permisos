@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.0
+
+- `totem.generar_ticket` y `totem.ver_tickets_en_espera`: endpoints del tótem (NemoQ) que antes pedían ROLE_DEVELOPER.
+
 ## 1.4.0
 
 - `footer.index` y `footer.edit`: permisos de gestion para el ABM del footer.
