@@ -1,4 +1,4 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.3.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.4.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 // Package permisos expone el catálogo de permisos de la PIN.
@@ -181,6 +181,8 @@ const (
 	InfoFactsCreate                        = "info.facts.create"
 	InfoFactsFactEdit                      = "info.facts.fact.edit"
 	InfoFactsFactDelete                    = "info.facts.fact.delete"
+	FooterIndex                            = "footer.index"
+	FooterEdit                             = "footer.edit"
 )
 
 // Permiso describe una entrada del catálogo.
@@ -366,6 +368,8 @@ var Catalogo = []Permiso{
 	{Slug: InfoFactsCreate, Nombre: "Crear dato", Descripcion: "Crear dato curioso", Modulo: "gestion", Grupo: "Pantallas de gestión"},
 	{Slug: InfoFactsFactEdit, Nombre: "Editar dato", Descripcion: "Editar dato curioso", Modulo: "gestion", Grupo: "Pantallas de gestión"},
 	{Slug: InfoFactsFactDelete, Nombre: "Eliminar dato", Descripcion: "Eliminar dato curioso", Modulo: "gestion", Grupo: "Pantallas de gestión"},
+	{Slug: FooterIndex, Nombre: "Ver Footer", Descripcion: "Ver el footer", Modulo: "gestion", Grupo: "Pantallas de gestión"},
+	{Slug: FooterEdit, Nombre: "Editar Footer", Descripcion: "Editar logo, redes, columnas y marcas del footer", Modulo: "gestion", Grupo: "Pantallas de gestión"},
 }
 
 // Existe indica si el slug pertenece al catálogo.

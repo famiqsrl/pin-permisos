@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "prefijo_atributo": "PERM_",
   "modulos": {
     "pin": "PIN",
@@ -1207,6 +1207,20 @@
       "slug": "info.facts.fact.delete",
       "nombre": "Eliminar dato",
       "descripcion": "Eliminar dato curioso",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "footer.index",
+      "nombre": "Ver Footer",
+      "descripcion": "Ver el footer",
+      "modulo": "gestion",
+      "grupo": "Pantallas de gestión"
+    },
+    {
+      "slug": "footer.edit",
+      "nombre": "Editar Footer",
+      "descripcion": "Editar logo, redes, columnas y marcas del footer",
       "modulo": "gestion",
       "grupo": "Pantallas de gestión"
     }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.3.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.4.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 namespace Famiq\PinPermisos;
@@ -191,6 +191,8 @@ enum Permissions: string
     case InfoFactsCreate = 'info.facts.create';
     case InfoFactsFactEdit = 'info.facts.fact.edit';
     case InfoFactsFactDelete = 'info.facts.fact.delete';
+    case FooterIndex = 'footer.index';
+    case FooterEdit = 'footer.edit';
 
     /** El atributo tal como se pregunta en isGranted(), IsGranted y is_granted(). */
     public function attr(): string
@@ -383,6 +385,8 @@ enum Permissions: string
             self::InfoFactsCreate => 'Crear dato',
             self::InfoFactsFactEdit => 'Editar dato',
             self::InfoFactsFactDelete => 'Eliminar dato',
+            self::FooterIndex => 'Ver Footer',
+            self::FooterEdit => 'Editar Footer',
         };
     }
 
@@ -561,6 +565,8 @@ enum Permissions: string
             self::InfoFactsCreate => 'Crear dato curioso',
             self::InfoFactsFactEdit => 'Editar dato curioso',
             self::InfoFactsFactDelete => 'Eliminar dato curioso',
+            self::FooterIndex => 'Ver el footer',
+            self::FooterEdit => 'Editar logo, redes, columnas y marcas del footer',
         };
     }
 
@@ -740,6 +746,8 @@ enum Permissions: string
             self::InfoFactsCreate => 'gestion',
             self::InfoFactsFactEdit => 'gestion',
             self::InfoFactsFactDelete => 'gestion',
+            self::FooterIndex => 'gestion',
+            self::FooterEdit => 'gestion',
         };
     }
 
@@ -919,6 +927,8 @@ enum Permissions: string
             self::InfoFactsCreate => 'Pantallas de gestión',
             self::InfoFactsFactEdit => 'Pantallas de gestión',
             self::InfoFactsFactDelete => 'Pantallas de gestión',
+            self::FooterIndex => 'Pantallas de gestión',
+            self::FooterEdit => 'Pantallas de gestión',
         };
     }
 }

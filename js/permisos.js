@@ -1,4 +1,4 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.3.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.4.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 export const PREFIJO = 'PERM_';
@@ -177,6 +177,8 @@ export const PERM = Object.freeze({
   INFO_FACTS_CREATE: "info.facts.create",
   INFO_FACTS_FACT_EDIT: "info.facts.fact.edit",
   INFO_FACTS_FACT_DELETE: "info.facts.fact.delete",
+  FOOTER_INDEX: "footer.index",
+  FOOTER_EDIT: "footer.edit",
 });
 
 export const CATALOGO = Object.freeze([
@@ -1381,6 +1383,20 @@ export const CATALOGO = Object.freeze([
         "slug": "info.facts.fact.delete",
         "nombre": "Eliminar dato",
         "descripcion": "Eliminar dato curioso",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "footer.index",
+        "nombre": "Ver Footer",
+        "descripcion": "Ver el footer",
+        "modulo": "gestion",
+        "grupo": "Pantallas de gestión"
+    },
+    {
+        "slug": "footer.edit",
+        "nombre": "Editar Footer",
+        "descripcion": "Editar logo, redes, columnas y marcas del footer",
         "modulo": "gestion",
         "grupo": "Pantallas de gestión"
     }

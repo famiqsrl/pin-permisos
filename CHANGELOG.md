@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+
+- `footer.index` y `footer.edit`: permisos de gestion para el ABM del footer.
+
 ## 1.3.0
 
 - `cotizacion.crear` (guardar o enviar una oferta común desde el carrito) y
