@@ -1,609 +1,810 @@
 {
-  "version": "1.6.0",
+  "version": "1.7.0",
   "prefijo_atributo": "PERM_",
   "modulos": {
     "pin": "PIN",
     "gestion": "Gestión"
   },
   "roles_por_modulo": {
-    "pin": ["super_admin"],
     "gestion": ["gestion_admin"]
   },
+  "roles": [
+    {
+      "slug": "sales",
+      "nombre": "Vendedor",
+      "sistema": "pin",
+      "orden": 0,
+      "rol_legacy": "ROLE_VENTAS",
+      "equivalentes_legacy": ["ROLE_VENTAS", "ROLE_PLANEAMIENTO", "ROLE_CONTENIDOS", "ROLE_CONTABILIDAD_E_IMPUESTOS"]
+    },
+    {
+      "slug": "account_manager",
+      "nombre": "Responsable de cuenta",
+      "sistema": "pin",
+      "orden": 2,
+      "rol_legacy": "ROLE_RESPCU",
+      "equivalentes_legacy": ["ROLE_RESPCU"]
+    },
+    {
+      "slug": "konnen",
+      "nombre": "Vendedor Konnen",
+      "sistema": "pin",
+      "orden": 3,
+      "rol_legacy": "ROLE_KONNEN",
+      "equivalentes_legacy": ["ROLE_KONNEN"]
+    },
+    {
+      "slug": "finance",
+      "nombre": "Finanzas",
+      "sistema": "pin",
+      "orden": 4,
+      "rol_legacy": "ROLE_FINANZAS",
+      "equivalentes_legacy": ["ROLE_FINANZAS"]
+    },
+    {
+      "slug": "manager",
+      "nombre": "Gerente",
+      "sistema": "pin",
+      "orden": 5,
+      "rol_legacy": "ROLE_GERENTE",
+      "equivalentes_legacy": ["ROLE_GERENTE"]
+    },
+    {
+      "slug": "accounts_payable",
+      "nombre": "Cuentas a pagar",
+      "sistema": "pin",
+      "orden": 10,
+      "rol_legacy": "ROLE_CUENTAS_A_PAGAR",
+      "equivalentes_legacy": ["ROLE_CUENTAS_A_PAGAR"]
+    },
+    {
+      "slug": "super_admin",
+      "nombre": "Super admin",
+      "sistema": "pin",
+      "orden": 11,
+      "rol_legacy": "ROLE_SUPER_ADMIN",
+      "equivalentes_legacy": ["ROLE_SUPER_ADMIN"]
+    },
+    {
+      "slug": "developer",
+      "nombre": "Desarrollador",
+      "sistema": "pin",
+      "orden": 12,
+      "rol_legacy": "ROLE_DEVELOPER",
+      "equivalentes_legacy": ["ROLE_DEVELOPER"]
+    },
+    {
+      "slug": "client",
+      "nombre": "Empresa",
+      "sistema": "pin",
+      "orden": 14,
+      "rol_legacy": "ROLE_EMPRESA",
+      "equivalentes_legacy": ["ROLE_EMPRESA", "ROLE_PROVEEDOR_EMPRESA"]
+    },
+    {
+      "slug": "supplier",
+      "nombre": "Proveedor",
+      "sistema": "pin",
+      "orden": 16,
+      "rol_legacy": "ROLE_PROVEEDOR",
+      "equivalentes_legacy": ["ROLE_PROVEEDOR", "ROLE_PROVEEDOR_EMPRESA"]
+    },
+    {
+      "slug": "gestion_planning",
+      "nombre": "Planeamiento",
+      "sistema": "gestion",
+      "orden": 19,
+      "equivalentes_legacy": ["ROLE_PLANEAMIENTO"]
+    },
+    {
+      "slug": "gestion_content",
+      "nombre": "Contenidos",
+      "sistema": "gestion",
+      "orden": 20,
+      "equivalentes_legacy": ["ROLE_CONTENIDOS"]
+    },
+    {
+      "slug": "gestion_accounts_payable",
+      "nombre": "Cuentas a pagar",
+      "sistema": "gestion",
+      "orden": 21,
+      "equivalentes_legacy": ["ROLE_CUENTAS_A_PAGAR"]
+    },
+    {
+      "slug": "gestion_admin",
+      "nombre": "Administrador de gestión",
+      "sistema": "gestion",
+      "orden": 22,
+      "equivalentes_legacy": ["ROLE_SUPER_ADMIN", "ROLE_DEVELOPER"]
+    },
+    {
+      "slug": "gestion_accounting_tax",
+      "nombre": "Contabilidad e impuestos",
+      "sistema": "gestion",
+      "orden": 23,
+      "equivalentes_legacy": ["ROLE_CONTABILIDAD_E_IMPUESTOS"]
+    }
+  ],
   "permisos": [
     {
       "slug": "pin.ingresar",
       "nombre": "Ingresar a la PIN",
       "descripcion": "Entrar al sitio y usar la PIN.",
       "modulo": "pin",
-      "grupo": "Ingreso y navegación"
+      "grupo": "Ingreso y navegación",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "mi_cuenta.ingresar",
       "nombre": "Mi cuenta",
       "descripcion": "Entrar a Mi cuenta.",
       "modulo": "pin",
-      "grupo": "Ingreso y navegación"
+      "grupo": "Ingreso y navegación",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "mis_gestiones.ingresar",
       "nombre": "Mis gestiones",
       "descripcion": "El panel del asesor: elegir cliente, seguimiento, reportes.",
       "modulo": "pin",
-      "grupo": "Ingreso y navegación"
+      "grupo": "Ingreso y navegación",
+      "roles": ["sales", "account_manager", "konnen", "manager", "accounts_payable", "super_admin", "developer"]
     },
     {
       "slug": "cliente.elegir_obligatorio",
       "nombre": "Elegir cliente antes de operar",
       "descripcion": "Sin cliente elegido, solo puede usar Mis gestiones y el alta de clientes.",
       "modulo": "pin",
-      "grupo": "Ingreso y navegación"
+      "grupo": "Ingreso y navegación",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "super_admin", "developer"]
     },
     {
       "slug": "chat_ayuda.ver",
       "nombre": "Ver botones de chat",
       "descripcion": "WhatsApp y chat de ayuda. Sin sesión se siguen viendo.",
       "modulo": "pin",
-      "grupo": "Ingreso y navegación"
+      "grupo": "Ingreso y navegación",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "super_admin", "developer", "client"]
     },
     {
       "slug": "encuesta.responder",
       "nombre": "Encuesta de satisfacción",
       "descripcion": "Recibir la encuesta de satisfacción.",
       "modulo": "pin",
-      "grupo": "Ingreso y navegación"
+      "grupo": "Ingreso y navegación",
+      "roles": ["client"]
     },
     {
       "slug": "cliente.operar_como",
       "nombre": "Operar en nombre de un cliente",
       "descripcion": "Elegir un cliente y trabajar por él; mensajes y textos de asesor.",
       "modulo": "pin",
-      "grupo": "Operar en nombre de clientes"
+      "grupo": "Operar en nombre de clientes",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "catalogo.ver_como_vendedor",
       "nombre": "Catálogo con condiciones de vendedor",
       "descripcion": "Búsqueda y precios del catálogo en modo vendedor; opciones completas de vinilo.",
       "modulo": "pin",
-      "grupo": "Operar en nombre de clientes"
+      "grupo": "Operar en nombre de clientes",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "cliente.dar_de_alta",
       "nombre": "Dar de alta clientes",
       "descripcion": "Registrar clientes nuevos a su nombre y volver a Mis gestiones.",
       "modulo": "pin",
-      "grupo": "Operar en nombre de clientes"
+      "grupo": "Operar en nombre de clientes",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "cliente.ver_informacion_interna",
       "nombre": "Ver información interna del cliente",
       "descripcion": "Clasificación, T1, pagos, bloqueos y score del cliente.",
       "modulo": "pin",
-      "grupo": "Operar en nombre de clientes"
+      "grupo": "Operar en nombre de clientes",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "cliente.ver_notas",
       "nombre": "Ver notas del cliente",
       "descripcion": "Notas del cliente en Mi cuenta y en el encabezado.",
       "modulo": "pin",
-      "grupo": "Operar en nombre de clientes"
+      "grupo": "Operar en nombre de clientes",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "vendedor.id_sap",
       "nombre": "Vendedor Famiq con ID SAP",
       "descripcion": "Valida el ID de SAP del vendedor y habilita la API externa.",
       "modulo": "pin",
-      "grupo": "Operar en nombre de clientes"
+      "grupo": "Operar en nombre de clientes",
+      "roles": ["sales", "account_manager"]
     },
     {
       "slug": "productos_especiales.ver",
       "nombre": "Ver Productos Especiales",
       "descripcion": "La sección Productos Especiales.",
       "modulo": "pin",
-      "grupo": "Catálogo y producto"
+      "grupo": "Catálogo y producto",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "precio.ver_standard",
       "nombre": "Ver precio standard",
       "descripcion": "El precio standard en Productos Especiales.",
       "modulo": "pin",
-      "grupo": "Catálogo y producto"
+      "grupo": "Catálogo y producto",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "producto.ver_marcas_internas",
       "nombre": "Ver marcas internas del producto",
       "descripcion": "Inmovilizado, recortes, cajón cerrado; botón Reportar un problema.",
       "modulo": "pin",
-      "grupo": "Catálogo y producto"
+      "grupo": "Catálogo y producto",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "producto.ver_descuento_maximo",
       "nombre": "Ver descuento máximo y contrato marco",
       "descripcion": "El tag de descuento máximo y el contrato marco.",
       "modulo": "pin",
-      "grupo": "Catálogo y producto"
+      "grupo": "Catálogo y producto",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "stock.ver_por_sucursal",
       "nombre": "Ver stock por sucursal",
       "descripcion": "Stock por sucursal en catálogo, ficha técnica y listas.",
       "modulo": "pin",
-      "grupo": "Catálogo y producto"
+      "grupo": "Catálogo y producto",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "catalogo.ver_datos_tecnicos",
       "nombre": "Ver datos técnicos internos",
       "descripcion": "El ID de material y datos técnicos sobre la imagen.",
       "modulo": "pin",
-      "grupo": "Catálogo y producto"
+      "grupo": "Catálogo y producto",
+      "roles": ["super_admin", "developer"]
     },
     {
       "slug": "recortes.ver_deposito_origen",
       "nombre": "Ver depósito de origen en recortes",
       "descripcion": "La columna Depósito de Origen en recortes de tubo.",
       "modulo": "pin",
-      "grupo": "Catálogo y producto"
+      "grupo": "Catálogo y producto",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "super_admin", "developer", "client"]
     },
     {
       "slug": "politica_precios.descargar",
       "nombre": "Descargar política de precios",
       "descripcion": "El Excel de política de precios.",
       "modulo": "pin",
-      "grupo": "Catálogo y producto"
+      "grupo": "Catálogo y producto",
+      "roles": ["sales", "account_manager", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "producto.ver_precio_sin_descuento",
       "nombre": "Ver precio sin descuento por presentación",
       "descripcion": "El precio sin descuento según la presentación del producto.",
       "modulo": "pin",
-      "grupo": "Catálogo y producto"
+      "grupo": "Catálogo y producto",
+      "roles": ["sales", "account_manager", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "catalogo.ver_como_comprar",
       "nombre": "Ver cómo comprar",
       "descripcion": "El bloque \"cómo comprar\" del pie de página.",
       "modulo": "pin",
-      "grupo": "Catálogo y producto"
+      "grupo": "Catálogo y producto",
+      "roles": ["sales", "account_manager", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "listas.usar",
       "nombre": "Usar listas y favoritos",
       "descripcion": "Marcar favoritos y usar listas.",
       "modulo": "pin",
-      "grupo": "Listas y favoritos"
+      "grupo": "Listas y favoritos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer", "client"]
     },
     {
       "slug": "listas.crear_famiq",
       "nombre": "Crear listas Famiq",
       "descripcion": "Las listas que crea son de Famiq y no personales.",
       "modulo": "pin",
-      "grupo": "Listas y favoritos"
+      "grupo": "Listas y favoritos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "listas.editar_famiq",
       "nombre": "Editar listas Famiq",
       "descripcion": "Hoy lo decide un mail hardcodeado; pasa a permiso directo de esas personas.",
       "modulo": "pin",
-      "grupo": "Listas y favoritos"
+      "grupo": "Listas y favoritos",
+      "roles": ["super_admin"]
     },
     {
       "slug": "listas.descargar_reporte",
       "nombre": "Descargar reporte de listas",
       "descripcion": "El Excel de listas de deseos.",
       "modulo": "pin",
-      "grupo": "Listas y favoritos"
+      "grupo": "Listas y favoritos",
+      "roles": ["super_admin", "developer"]
     },
     {
       "slug": "carrito.precio_manual",
       "nombre": "Precio manual y moneda",
       "descripcion": "Cargar precio manual y elegir moneda por posición.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "carrito.notas",
       "nombre": "Notas en el carrito",
       "descripcion": "Notas por posición y de cabecera.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "carrito.alternativas",
       "nombre": "Alternativas de producto",
       "descripcion": "Generar y ordenar alternativas.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "carrito.opciones_cabecera",
       "nombre": "Opciones del carrito",
       "descripcion": "Agregar alternativas y complementarios automáticos.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "carrito.carga_masiva_oferta_precio_manual",
       "nombre": "Carga masiva en ofertas de precio manual",
       "descripcion": "Carga masiva aunque el carrito venga de una oferta con precio manual.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "carrito.cambiar_centro",
       "nombre": "Cambiar el centro de las posiciones",
       "descripcion": "Mover posiciones entre centros y sucursales.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "carrito.anular_con_motivo",
       "nombre": "Anular posición con motivo",
       "descripcion": "Pedir el motivo al anular una posición.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "carrito.vendedor_referenciado",
       "nombre": "Vendedor referenciado",
       "descripcion": "Gestión referenciada y elegir el vendedor referenciado.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "carrito.vendedor_referenciado_kiosco",
       "nombre": "Vendedor referenciado desde kiosco",
       "descripcion": "El cliente en un kiosco elige el vendedor que lo atendió.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["client"]
     },
     {
       "slug": "carrito.recuperar_sin_forzar_centro",
       "nombre": "Recuperar carrito sin forzar centro",
       "descripcion": "Recuperar desde un documento manteniendo sus centros.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "cupones.usar",
       "nombre": "Cupones",
       "descripcion": "Ver y aplicar cupones.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "envio.bonificar",
       "nombre": "Bonificar envío y embalaje",
       "descripcion": "Bonificar gastos de envío y embalaje.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "carrito.agregar",
       "nombre": "Agregar productos al carrito",
       "descripcion": "Agregar productos al carrito desde el catálogo y el detalle.",
       "modulo": "pin",
-      "grupo": "Carrito"
+      "grupo": "Carrito",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "super_admin", "developer", "client"]
     },
     {
       "slug": "cotizacion.guardar_en_cualquier_paso",
       "nombre": "Guardar cotización en cualquier paso",
       "descripcion": "Los demás solo guardan en el paso 2.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "cotizacion.crear",
       "nombre": "Crear ofertas comunes",
       "descripcion": "Guardar o enviar una cotización u oferta común desde el carrito.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "super_admin", "developer", "client"]
     },
     {
       "slug": "cotizacion.crear_especial",
       "nombre": "Crear ofertas especiales",
       "descripcion": "Agregar productos a medida (MVSE), que convierten el carrito en una oferta especial.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "pedido.emitir",
       "nombre": "Emitir pedidos",
       "descripcion": "Emitir el pedido desde el carrito. Hoy el responsable de cuenta no puede.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["sales", "konnen", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "pedido.exigir_mail_confirmacion",
       "nombre": "Exigir mail de confirmación",
       "descripcion": "Pide elegir el mail al que se envía la confirmación.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "pedido.finalidad",
       "nombre": "Finalidad del pedido",
       "descripcion": "Cargar la finalidad del pedido.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "pedido.consignacion",
       "nombre": "Consignación",
       "descripcion": "Marcar el pedido en consignación (Argentina).",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "pedido.pago_mostrador",
       "nombre": "Pago en mostrador",
       "descripcion": "Pedido de mostrador: abona en caja, solo cuenta corriente.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["client"]
     },
     {
       "slug": "pedido.ofrecer_retiro_mostrador",
       "nombre": "Ofrecer retiro en mostrador",
       "descripcion": "Ofrecer el retiro por mostrador.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "pago.condiciones_adicionales",
       "nombre": "Condiciones de pago adicionales",
       "descripcion": "Anticipo, otras condiciones y cambiar la condición del documento.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "pago.cambiar_moneda",
       "nombre": "Cambiar moneda de pago",
       "descripcion": "Hoy es Desarrollador y dos mails hardcodeados, que pasan a permiso directo.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["super_admin", "developer"]
     },
     {
       "slug": "pedido.ver_muestras_gratis",
       "nombre": "Ver pedidos de muestra gratis",
       "descripcion": "Ver y abrir pedidos de muestra gratis.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "pedido.ver_aviso_pago",
       "nombre": "Ver avisos de pago al cliente",
       "descripcion": "Avisos de pago que se muestran solo a clientes al confirmar.",
       "modulo": "pin",
-      "grupo": "Cotizaciones y pedidos"
+      "grupo": "Cotizaciones y pedidos",
+      "roles": ["client"]
     },
     {
       "slug": "documento.elegir_posiciones",
       "nombre": "Elegir posiciones de una cotización",
       "descripcion": "Elegir qué posiciones pasar al carrito.",
       "modulo": "pin",
-      "grupo": "Documentos"
+      "grupo": "Documentos",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "documento.copiar_cotizacion",
       "nombre": "Copiar cotización",
       "descripcion": "Copiar y dar de alta por parecido.",
       "modulo": "pin",
-      "grupo": "Documentos"
+      "grupo": "Documentos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "documento.actualizar_oferta_especial",
       "nombre": "Actualizar oferta especial vencida",
       "descripcion": "Actualizar una oferta especial ya vencida.",
       "modulo": "pin",
-      "grupo": "Documentos"
+      "grupo": "Documentos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "documento.omitir_control_centro",
       "nombre": "Abrir documentos de otro centro",
       "descripcion": "No exige que coincidan los centros al comprar, modificar o recotizar.",
       "modulo": "pin",
-      "grupo": "Documentos"
+      "grupo": "Documentos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "documento.ver_condiciones_internas",
       "nombre": "Ver condiciones internas",
       "descripcion": "Sucursal de suministro y notas internas del documento.",
       "modulo": "pin",
-      "grupo": "Documentos"
+      "grupo": "Documentos",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "mi_cuenta.compras",
       "nombre": "Compras y transacciones",
       "descripcion": "Las secciones Compras y Transacciones.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "mi_cuenta.ventas",
       "nombre": "Ventas",
       "descripcion": "La sección Ventas del proveedor.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["accounts_payable", "supplier"]
     },
     {
       "slug": "mi_cuenta.ayuda",
       "nombre": "Ayuda",
       "descripcion": "La sección Ayuda.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "mi_cuenta.centro_ayuda",
       "nombre": "Centro de ayuda",
       "descripcion": "Consultas y reclamos.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["sales", "account_manager", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "mi_cuenta.estado_cuenta",
       "nombre": "Estado de cuenta",
       "descripcion": "El estado de cuenta.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["sales", "account_manager", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "mi_cuenta.legajo_impositivo",
       "nombre": "Legajo impositivo",
       "descripcion": "El legajo impositivo (Argentina).",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "mi_cuenta.mis_codigos",
       "nombre": "Mis códigos",
       "descripcion": "Códigos propios del cliente para los productos.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "accounts_payable", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "mi_cuenta.direcciones",
       "nombre": "Mis direcciones",
       "descripcion": "Direcciones de entrega.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "accounts_payable", "super_admin", "developer", "client"]
     },
     {
       "slug": "mi_cuenta.cambiar_contrasena",
       "nombre": "Cambiar contraseña",
       "descripcion": "Cambiar la contraseña desde Mi cuenta.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["client", "supplier"]
     },
     {
       "slug": "personas.gestionar",
       "nombre": "Mis personas",
       "descripcion": "Gestionar las personas de la cuenta.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "super_admin", "developer", "client", "supplier"]
     },
     {
       "slug": "personas.favoritas",
       "nombre": "Personas favoritas",
       "descripcion": "Marcar personas favoritas y ver a quién están asociadas.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "comprobantes_pago.ver",
       "nombre": "Comprobantes de pago",
       "descripcion": "Consultar comprobantes de pago.",
       "modulo": "pin",
-      "grupo": "Mi cuenta"
+      "grupo": "Mi cuenta",
+      "roles": ["sales", "account_manager", "konnen", "finance", "manager", "super_admin", "developer", "client"]
     },
     {
       "slug": "reclamos.modo_asesor",
       "nombre": "Reclamos en modo asesor",
       "descripcion": "Ver todos los mensajes, chat privado, elegir cliente y figurar como creador.",
       "modulo": "pin",
-      "grupo": "Reclamos"
+      "grupo": "Reclamos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "reclamos.notas_internas",
       "nombre": "Notas internas en reclamos",
       "descripcion": "Cargar notas internas en un reclamo.",
       "modulo": "pin",
-      "grupo": "Reclamos"
+      "grupo": "Reclamos",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "crm.gestionar_contactos",
       "nombre": "Gestionar contactos del CRM",
       "descripcion": "Crear, asociar, actualizar y cerrar contactos de clientes.",
       "modulo": "pin",
-      "grupo": "Reclamos"
+      "grupo": "Reclamos",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "konnen.busqueda",
       "nombre": "Búsqueda Konnen",
       "descripcion": "Filtros y subfamilias del canal Konnen.",
       "modulo": "pin",
-      "grupo": "Canal Konnen"
+      "grupo": "Canal Konnen",
+      "roles": ["konnen"]
     },
     {
       "slug": "konnen.documentos",
       "nombre": "Documentos Konnen",
       "descripcion": "Opera solo documentos Konnen; se informa como Konnen a SAP; login por documento M/K.",
       "modulo": "pin",
-      "grupo": "Canal Konnen"
+      "grupo": "Canal Konnen",
+      "roles": ["konnen"]
     },
     {
       "slug": "cuenta_cliente.usar",
       "nombre": "Cuenta cliente",
       "descripcion": "Se identifica como cliente ante SAP y en el registro.",
       "modulo": "pin",
-      "grupo": "Clientes y proveedores"
+      "grupo": "Clientes y proveedores",
+      "roles": ["client"]
     },
     {
       "slug": "cuenta_proveedor.usar",
       "nombre": "Cuenta proveedor",
       "descripcion": "Datos de proveedor e ingreso como proveedor.",
       "modulo": "pin",
-      "grupo": "Clientes y proveedores"
+      "grupo": "Clientes y proveedores",
+      "roles": ["supplier"]
     },
     {
       "slug": "proveedores.portal",
       "nombre": "Portal de proveedores",
       "descripcion": "Órdenes de compra y facturas.",
       "modulo": "pin",
-      "grupo": "Clientes y proveedores"
+      "grupo": "Clientes y proveedores",
+      "roles": ["accounts_payable", "super_admin", "developer", "supplier"]
     },
     {
       "slug": "proveedor.operar_como",
       "nombre": "Operar en nombre de un proveedor",
       "descripcion": "Elegir un proveedor y trabajar por él (Cuentas a pagar).",
       "modulo": "pin",
-      "grupo": "Clientes y proveedores"
+      "grupo": "Clientes y proveedores",
+      "roles": ["accounts_payable"]
     },
     {
       "slug": "pedidos_bloqueados.filtrar_por_asesor",
       "nombre": "Filtrar pedidos bloqueados por asesor",
       "descripcion": "El filtro Asesor en el seguimiento de pedidos bloqueados.",
       "modulo": "pin",
-      "grupo": "Pedidos bloqueados y transportes"
+      "grupo": "Pedidos bloqueados y transportes",
+      "roles": ["account_manager"]
     },
     {
       "slug": "transportes.ver_horarios",
       "nombre": "Ver horarios de transportes",
       "descripcion": "La columna de horarios en transportes.",
       "modulo": "pin",
-      "grupo": "Pedidos bloqueados y transportes"
+      "grupo": "Pedidos bloqueados y transportes",
+      "roles": ["sales", "account_manager", "konnen", "manager", "super_admin", "developer"]
     },
     {
       "slug": "transportes.crear",
       "nombre": "Crear transportes",
       "descripcion": "Dar de alta un transporte nuevo.",
       "modulo": "pin",
-      "grupo": "Pedidos bloqueados y transportes"
+      "grupo": "Pedidos bloqueados y transportes",
+      "roles": ["sales", "account_manager", "manager", "super_admin", "developer"]
     },
     {
       "slug": "sistema.log_sap",
       "nombre": "Registro técnico de SAP",
       "descripcion": "Guarda el detalle de las llamadas a SAP del usuario.",
       "modulo": "pin",
-      "grupo": "Sistema"
+      "grupo": "Sistema",
+      "roles": ["super_admin", "developer"]
     },
     {
       "slug": "sistema.debug_carrito",
       "nombre": "Debug del carrito",
       "descripcion": "La herramienta de debug del carrito.",
       "modulo": "pin",
-      "grupo": "Sistema"
+      "grupo": "Sistema",
+      "roles": ["super_admin", "developer"]
     },
     {
       "slug": "sistema.marcas_desarrollo",
       "nombre": "Marcas de desarrollo en pantalla",
       "descripcion": "Marcas técnicas en algunas pantallas.",
       "modulo": "pin",
-      "grupo": "Sistema"
+      "grupo": "Sistema",
+      "roles": ["super_admin", "developer"]
     },
     {
       "slug": "sistema.no_informar_usuario_sap",
       "nombre": "No informar el usuario a SAP",
       "descripcion": "No envía el usuario web a SAP al consultar clientes.",
       "modulo": "pin",
-      "grupo": "Sistema"
+      "grupo": "Sistema",
+      "roles": ["super_admin", "developer"]
     },
     {
       "slug": "totem.generar_ticket",
@@ -611,7 +812,7 @@
       "descripcion": "Generar un ticket de prueba del tótem (NemoQ).",
       "modulo": "pin",
       "grupo": "Sistema",
-      "roles": ["developer"]
+      "roles": ["super_admin", "developer"]
     },
     {
       "slug": "totem.ver_tickets_en_espera",
@@ -619,21 +820,23 @@
       "descripcion": "Consultar los tickets en espera del tótem (NemoQ).",
       "modulo": "pin",
       "grupo": "Sistema",
-      "roles": ["developer"]
+      "roles": ["super_admin", "developer"]
     },
     {
       "slug": "producto.mantenimiento",
       "nombre": "Mantenimiento de productos",
       "descripcion": "Actualizar un material desde SAP y regenerar el Excel de materiales.",
       "modulo": "pin",
-      "grupo": "Sistema"
+      "grupo": "Sistema",
+      "roles": ["super_admin", "developer"]
     },
     {
       "slug": "gestion.ingresar",
       "nombre": "Ingresar a gestión",
       "descripcion": "Entrar a gestión.",
       "modulo": "gestion",
-      "grupo": "Gestión"
+      "grupo": "Gestión",
+      "roles": ["gestion_planning", "gestion_content", "gestion_accounts_payable", "gestion_accounting_tax"]
     },
     {
       "slug": "roles.administrar",
@@ -654,35 +857,40 @@
       "nombre": "Ver usuarios",
       "descripcion": "Listado de usuarios",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_accounts_payable"]
     },
     {
       "slug": "user.create",
       "nombre": "Crear usuario",
       "descripcion": "Crear usuario",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_accounts_payable"]
     },
     {
       "slug": "user.edit",
       "nombre": "Editar usuario",
       "descripcion": "Editar usuario",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_accounts_payable"]
     },
     {
       "slug": "user.delete",
       "nombre": "Eliminar usuario",
       "descripcion": "Eliminar usuario",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_accounts_payable"]
     },
     {
       "slug": "product.index",
       "nombre": "Ver Productos",
       "descripcion": "Listado de Productos",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning"]
     },
     {
       "slug": "payment.index",
@@ -696,21 +904,24 @@
       "nombre": "Ver Código Cliente",
       "descripcion": "Listado de Código Cliente",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning"]
     },
     {
       "slug": "client-code.create",
       "nombre": "Crear Código Cliente",
       "descripcion": "Crear Código Cliente",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning"]
     },
     {
       "slug": "client-code.destroy",
       "nombre": "Eliminar Código Cliente",
       "descripcion": "Eliminar Código Cliente",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning"]
     },
     {
       "slug": "list.index",
@@ -745,14 +956,16 @@
       "nombre": "Ver Legajo impositivo",
       "descripcion": "Listado del legajo impositivo",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_accounting_tax"]
     },
     {
       "slug": "legajo.update",
       "nombre": "Editar Legajo impositivo",
       "descripcion": "Editar el legajo impositivo",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_accounting_tax"]
     },
     {
       "slug": "materials.index",
@@ -787,182 +1000,208 @@
       "nombre": "Ver Leads",
       "descripcion": "Listado de Leads",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "tag.index",
       "nombre": "Ver Etiquetas",
       "descripcion": "Listado de Etiquetas",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "tag.create",
       "nombre": "Crear Etiquetas",
       "descripcion": "Crear Etiqueta",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "tag.edit",
       "nombre": "Editar Etiqueta",
       "descripcion": "Editar Etiqueta",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "tag.destroy",
       "nombre": "Eliminar Etiqueta",
       "descripcion": "Eliminar Etiqueta",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "filter-order.index",
       "nombre": "Ver Filtros",
       "descripcion": "Listado de Filtros",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "filter-order.show",
       "nombre": "Ver Ordenamiento de filtros",
       "descripcion": "Ver Ordenamiento de filtros",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "filter-order.update",
       "nombre": "Editar Ordenamiento de filtros",
       "descripcion": "Cambiar el orden de los filtros",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "component-types.types",
       "nombre": "Ver Tipos de componentes",
       "descripcion": "Listado de Tipos de componentes",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "component-types.index",
       "nombre": "Ver Componentes de la Sección",
       "descripcion": "Listado de los Componentes de la sección",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "components.index",
       "nombre": "Ver Componentes",
       "descripcion": "Listado de Componentes",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "components.create",
       "nombre": "Crear Componente",
       "descripcion": "Crear Componente",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "components.component.edit",
       "nombre": "Editar Componente",
       "descripcion": "Editar Componente",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "components.component.delete",
       "nombre": "Eliminar Componente",
       "descripcion": "Eliminar Componente",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "logos.index",
       "nombre": "Ver Logos",
       "descripcion": "Listado de Logos",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "logos.create",
       "nombre": "Crear Logo",
       "descripcion": "Crear Logo",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "logos.logo.edit",
       "nombre": "Editar Logo",
       "descripcion": "Editar Logo",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "logos.logo.delete",
       "nombre": "Eliminar Logo",
       "descripcion": "Eliminar Logo",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "hierarchy-node.index",
       "nombre": "Ver Nodos",
       "descripcion": "Listado de Nodos",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "hierarchy-node.create",
       "nombre": "Crear Nodo",
       "descripcion": "Crear Nodo",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "hierarchy-node.node.edit",
       "nombre": "Editar Nodo",
       "descripcion": "Editar Nodo",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "hierarchy-node.node.delete",
       "nombre": "Eliminar Nodo",
       "descripcion": "Eliminar Nodo",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "team.index",
       "nombre": "Ver Personal",
       "descripcion": "Listado de Personal",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_content"]
     },
     {
       "slug": "team.create",
       "nombre": "Crear Personal",
       "descripcion": "Crear Personal",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_content"]
     },
     {
       "slug": "team.edit",
       "nombre": "Editar Personal",
       "descripcion": "Editar Personal",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_content"]
     },
     {
       "slug": "team.delete",
       "nombre": "Eliminar Personal",
       "descripcion": "Eliminar Personal",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_content"]
     },
     {
       "slug": "messages.index",
@@ -997,28 +1236,32 @@
       "nombre": "Ver Novedad",
       "descripcion": "Listado de Novedades",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "notifications.create",
       "nombre": "Crear Novedad",
       "descripcion": "Crear Novedad",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "notifications.notification.edit",
       "nombre": "Editar Novedad",
       "descripcion": "Editar Novedad",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "notifications.notification.delete",
       "nombre": "Eliminar Novedad",
       "descripcion": "Eliminar Novedad",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "feature-flags.index",
@@ -1081,28 +1324,32 @@
       "nombre": "Ver Segmentos",
       "descripcion": "Listado de Segmentos",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "segments.create",
       "nombre": "Crear Segmento",
       "descripcion": "Crear Segmento",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "segments.segment.edit",
       "nombre": "Editar Segmento",
       "descripcion": "Editar Segmento",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "segments.segment.delete",
       "nombre": "Eliminar Segmento",
       "descripcion": "Eliminar Segmento",
       "modulo": "gestion",
-      "grupo": "Pantallas de gestión"
+      "grupo": "Pantallas de gestión",
+      "roles": ["gestion_planning", "gestion_content"]
     },
     {
       "slug": "empresas.index",

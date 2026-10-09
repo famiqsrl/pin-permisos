@@ -11,7 +11,7 @@
 -- Para varios sujetos (por ejemplo, el usuario más sus grupos), se repite cada
 -- rama con un OR de pares (model_type, model_id).
 --
--- Las tablas las crea y mantiene backend-pin (migraciones Doctrine). Este
+-- Las tablas las crea sql/esquema.sql (de este paquete). Este
 -- archivo no es una migración.
 
 SELECT DISTINCT p.slug

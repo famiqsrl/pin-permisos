@@ -1,11 +1,11 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.6.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.7.0).
 // No editar a mano: cambiar el JSON y volver a generar.
 
 // Package permisos expone el catálogo de permisos de la PIN.
 package permisos
 
 // Versión del catálogo.
-const Version = "1.6.0"
+const Version = "1.7.0"
 
 // Prefijo de los atributos de seguridad en las aplicaciones Symfony.
 const Prefijo = "PERM_"

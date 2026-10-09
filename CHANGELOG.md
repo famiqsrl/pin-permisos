@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.7.0
+
+- El paquete es dueño de las tablas y de su contenido base: `sql/esquema.sql`
+  (CREATE TABLE IF NOT EXISTS) y `sql/sincronizar.sql` (generado, idempotente).
+  Ya no hacen falta migraciones ni comandos propios de cada proyecto.
+- `roles` en el catálogo (antes en la siembra de backend-pin), con
+  `rol_legacy` y `equivalentes_legacy`.
+- `roles` de cada permiso con la asignación inicial completa; `roles_por_modulo`
+  solo para `gestion_admin`.
+- PHP: `Catalogo::roles()`, `Catalogo::sentencias()`. Go: `permisos.Sincronizar()`.
+
 ## 1.6.0
 
 - Roles iniciales: `roles` en cada permiso y `roles_por_modulo` (`super_admin`

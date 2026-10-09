@@ -8,25 +8,40 @@ necesite preguntar por un permiso, en el lenguaje que sea.
 
 | Archivo | Para qué |
 | --- | --- |
-| `catalogo/permisos.json` | **Fuente única.** Slug, nombre, descripción, módulo y grupo de cada permiso. |
+| `catalogo/permisos.json` | **Fuente única.** Roles, permisos y qué roles recibe cada permiso al crearse. |
+| `sql/esquema.sql` | Tablas `permissions`, `roles`, `role_has_permissions`, `model_has_roles`, `model_has_permissions` (`CREATE TABLE IF NOT EXISTS`). |
+| `sql/sincronizar.sql` | Generado. Sincroniza roles y permisos de la base con el catálogo. |
+| `sql/permisos_efectivos.sql` | Contrato de cómo se calculan los permisos efectivos de un usuario. |
 | `php/src/Permissions.php` | Enum generado (`Famiq\PinPermisos\Permissions`) para Symfony y Laravel. |
+| `php/src/Catalogo.php` | Generado. Roles del catálogo y `Catalogo::sentencias()` para correr los SQL desde PHP. |
 | `js/permisos.js` | Constantes generadas (`PERM`, `CATALOGO`) para Vue y JS. |
 | `go/permisos.go` | Constantes generadas (paquete `permisos`) para Go. |
-| `sql/permisos_efectivos.sql` | Contrato de cómo se calculan los permisos efectivos de un usuario. |
-| `bin/generar.php` | Genera los tres archivos de constantes desde el JSON. |
+| `go/sincronizar.go` | Generado. `permisos.Sincronizar(ctx, db)` con los dos SQL embebidos. |
+| `bin/generar.php` | Genera todo lo anterior desde el JSON. |
 
-Qué roles tiene cada permiso se administra desde gestion (ABM de roles y
-permisos); los datos viven en la base de la PIN. Lo único que define este
-catálogo son los **roles iniciales** de un permiso nuevo:
+**El paquete es dueño de las tablas y de su contenido base.** No hay
+migraciones en ningún proyecto: cualquier consumidor corre `esquema.sql` y
+después `sincronizar.sql`, en cualquier orden de deploy y las veces que sea.
 
-- `roles` en el permiso: roles que lo reciben al crearse (por ejemplo
-  `["developer"]`).
-- `roles_por_modulo`: roles que reciben todo permiso nuevo de un módulo
-  (`super_admin` en `pin`, `gestion_admin` en `gestion`).
+## Catálogo
 
-backend-pin los aplica una sola vez, cuando `app:permissions:sync` inserta el
-permiso. Si después se lo sacan desde gestion, no vuelve. Un rol que no existe
-en la base se ignora.
+- `roles`: slug, nombre, sistema (`pin` o `gestion`), orden, `rol_legacy` y
+  `equivalentes_legacy` (los `ROLE_*` viejos que se traducen a ese rol).
+- `permisos`: slug, nombre, descripción, módulo, grupo y `roles`: los roles
+  que lo reciben **cuando se crea**.
+- `roles_por_modulo`: roles que reciben todo permiso de un módulo
+  (`gestion_admin` en `gestion`).
+
+Qué roles tiene cada permiso después se administra desde gestion (ABM de roles
+y permisos). La sincronización no pisa nada de eso:
+
+- Roles: crea los que faltan; uno existente no se toca (nombre, orden, etc.).
+- Permiso nuevo: se inserta y se asigna a sus roles. Solo esa vez: si después
+  se lo sacan a un rol desde gestion, no vuelve.
+- Permiso existente: solo `type` y `active`. `name` y `order` se editan en gestion.
+- Permiso que ya no está en el catálogo: `active = 0`. Nunca se borra.
+
+En una base vacía deja todo como el corte inicial.
 
 ## Reglas
 
@@ -37,17 +52,24 @@ en la base se ignora.
 - Un permiso por funcionalidad que el negocio pueda querer dar o quitar por
   separado.
 - Nunca se renombra ni se borra un slug publicado: se agrega uno nuevo y el
-  viejo se deja de usar. backend-pin lo marca como inactivo al sincronizar.
+  viejo se deja de usar. La sincronización lo marca como inactivo.
 
 ## Agregar un permiso
 
-1. Agregarlo en `catalogo/permisos.json`, con `roles` si algún rol además de
-   los de `roles_por_modulo` lo tiene que tener desde el primer día.
+1. Agregarlo en `catalogo/permisos.json`, con `roles`.
 2. `php bin/generar.php` (en local: `docker exec -u $(id -u):$(id -g) -w /var/www/pin-permisos famiq_php81_fpm php bin/generar.php`).
 3. Subir la versión en `catalogo/permisos.json`, `package.json` y `CHANGELOG.md`, commitear y taggear (`vX.Y.Z`).
-4. Actualizar la versión en los consumidores (`composer update famiq/pin-permisos`).
-   En backend-pin el `composer install` corre `app:permissions:sync` en todas
-   las regiones: no hace falta ninguna migración.
+4. `composer update famiq/pin-permisos` en los consumidores. En el deploy se
+   sincroniza solo (backend-pin lo corre en su `composer install`).
+
+## Sincronizar
+
+- **mysql:** `cat sql/esquema.sql sql/sincronizar.sql | mysql <base>`
+- **PHP:** `foreach (Catalogo::sentencias(Catalogo::ESQUEMA) as $sql) { ... }` y lo mismo con `Catalogo::SINCRONIZAR`, en la misma conexión.
+- **Go:** `permisos.Sincronizar(ctx, db)`.
+
+Al final devuelve una fila con roles nuevos, permisos nuevos, asignaciones,
+actualizados y desactivados.
 
 frontend-pin y gestion comparan su versión con la de backend-pin (que la
 devuelve junto con los permisos del usuario) y dejan un warning en el log si
