@@ -15,7 +15,18 @@ necesite preguntar por un permiso, en el lenguaje que sea.
 | `sql/permisos_efectivos.sql` | Contrato de cómo se calculan los permisos efectivos de un usuario. |
 | `bin/generar.php` | Genera los tres archivos de constantes desde el JSON. |
 
-Qué roles tiene cada permiso **no** está acá: se administra desde gestion (ABM de roles y permisos). Los datos viven en la base de la PIN; backend-pin solo carga la siembra inicial del corte.
+Qué roles tiene cada permiso se administra desde gestion (ABM de roles y
+permisos); los datos viven en la base de la PIN. Lo único que define este
+catálogo son los **roles iniciales** de un permiso nuevo:
+
+- `roles` en el permiso: roles que lo reciben al crearse (por ejemplo
+  `["developer"]`).
+- `roles_por_modulo`: roles que reciben todo permiso nuevo de un módulo
+  (`super_admin` en `pin`, `gestion_admin` en `gestion`).
+
+backend-pin los aplica una sola vez, cuando `app:permissions:sync` inserta el
+permiso. Si después se lo sacan desde gestion, no vuelve. Un rol que no existe
+en la base se ignora.
 
 ## Reglas
 
@@ -30,10 +41,17 @@ Qué roles tiene cada permiso **no** está acá: se administra desde gestion (AB
 
 ## Agregar un permiso
 
-1. Agregarlo en `catalogo/permisos.json`.
+1. Agregarlo en `catalogo/permisos.json`, con `roles` si algún rol además de
+   los de `roles_por_modulo` lo tiene que tener desde el primer día.
 2. `php bin/generar.php` (en local: `docker exec -u $(id -u):$(id -g) -w /var/www/pin-permisos famiq_php81_fpm php bin/generar.php`).
 3. Subir la versión en `catalogo/permisos.json`, `package.json` y `CHANGELOG.md`, commitear y taggear (`vX.Y.Z`).
-4. Actualizar la versión en los consumidores y correr `app:permissions:sync` en backend-pin.
+4. Actualizar la versión en los consumidores (`composer update famiq/pin-permisos`).
+   En backend-pin el `composer install` corre `app:permissions:sync` en todas
+   las regiones: no hace falta ninguna migración.
+
+frontend-pin y gestion comparan su versión con la de backend-pin (que la
+devuelve junto con los permisos del usuario) y dejan un warning en el log si
+quedaron atrás.
 
 `php bin/generar.php --verificar` falla si algún archivo generado no coincide
 con el JSON.

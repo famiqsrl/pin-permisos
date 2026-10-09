@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.0
+
+- Roles iniciales: `roles` en cada permiso y `roles_por_modulo` (`super_admin`
+  en pin, `gestion_admin` en gestion). backend-pin los asigna al crear el
+  permiso, sin migraciones. El enum PHP suma `rolesIniciales()`.
+- Constante `VERSION` en PHP (`Permissions::VERSION`), JS y Go.
+- Los permisos del tótem salen con `developer` como rol inicial.
+
 ## 1.5.0
 
 - `totem.generar_ticket` y `totem.ver_tickets_en_espera`: endpoints del tótem (NemoQ) que antes pedían ROLE_DEVELOPER.

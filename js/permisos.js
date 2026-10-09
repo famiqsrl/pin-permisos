@@ -1,5 +1,7 @@
-// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.5.0).
+// Generado por bin/generar.php a partir de catalogo/permisos.json (versión 1.6.0).
 // No editar a mano: cambiar el JSON y volver a generar.
+
+export const VERSION = '1.6.0';
 
 export const PREFIJO = 'PERM_';
 

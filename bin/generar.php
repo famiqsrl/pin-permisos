@@ -22,7 +22,8 @@ $catalogo = json_decode((string) file_get_contents("$raiz/catalogo/permisos.json
 $permisos = $catalogo['permisos'];
 $prefijo = $catalogo['prefijo_atributo'];
 
-validar($permisos, array_keys($catalogo['modulos']));
+validar($permisos, array_keys($catalogo['modulos']), $catalogo['roles_por_modulo'] ?? []);
+$permisos = resolverRolesIniciales($permisos, $catalogo['roles_por_modulo'] ?? []);
 
 $salidas = [
     "$raiz/php/src/Permissions.php" => generarPhp($permisos, $prefijo, $catalogo['version']),
@@ -55,13 +56,21 @@ if ($verificar) {
 }
 
 /**
- * @param list<array{slug:string,nombre:string,descripcion:string,modulo:string,grupo:string}> $permisos
+ * @param list<array{slug:string,nombre:string,descripcion:string,modulo:string,grupo:string,roles?:list<string>}> $permisos
  * @param list<string> $modulos
+ * @param array<string, list<string>> $rolesPorModulo
  */
-function validar(array $permisos, array $modulos): void
+function validar(array $permisos, array $modulos, array $rolesPorModulo): void
 {
     $vistos = [];
     $nombres = [];
+
+    foreach ($rolesPorModulo as $modulo => $roles) {
+        if (!in_array($modulo, $modulos, true)) {
+            throw new RuntimeException("Módulo desconocido en roles_por_modulo: $modulo");
+        }
+        validarRoles($roles, "roles_por_modulo.$modulo");
+    }
 
     foreach ($permisos as $permiso) {
         foreach (['slug', 'nombre', 'descripcion', 'modulo', 'grupo'] as $campo) {
@@ -82,6 +91,10 @@ function validar(array $permisos, array $modulos): void
             throw new RuntimeException("Módulo desconocido en $slug: {$permiso['modulo']}");
         }
 
+        if (isset($permiso['roles'])) {
+            validarRoles($permiso['roles'], "$slug.roles");
+        }
+
         $caso = nombreCaso($slug);
         if (isset($nombres[$caso])) {
             throw new RuntimeException("$slug y {$nombres[$caso]} generan el mismo nombre de constante ($caso)");
@@ -90,6 +103,32 @@ function validar(array $permisos, array $modulos): void
         $vistos[$slug] = true;
         $nombres[$caso] = $slug;
     }
+}
+
+function validarRoles(mixed $roles, string $donde): void
+{
+    if (!is_array($roles) || !array_is_list($roles)) {
+        throw new RuntimeException("$donde tiene que ser una lista de slugs de rol");
+    }
+    foreach ($roles as $rol) {
+        if (!is_string($rol) || !preg_match('/^[a-z][a-z0-9_]*$/', $rol)) {
+            throw new RuntimeException("Slug de rol inválido en $donde: " . json_encode($rol));
+        }
+    }
+}
+
+/**
+ * Roles que reciben el permiso cuando aparece por primera vez: los propios del
+ * permiso más los de su módulo en roles_por_modulo.
+ */
+function resolverRolesIniciales(array $permisos, array $rolesPorModulo): array
+{
+    foreach ($permisos as &$p) {
+        $roles = array_merge($p['roles'] ?? [], $rolesPorModulo[$p['modulo']] ?? []);
+        $p['roles'] = array_values(array_unique($roles));
+    }
+
+    return $permisos;
 }
 
 /** cliente.operar_como -> ClienteOperarComo */
@@ -116,9 +155,13 @@ function generarPhp(array $permisos, string $prefijo, string $version): string
     $descripciones = '';
     $modulos = '';
     $grupos = '';
+    $roles = '';
 
     foreach ($permisos as $p) {
         $caso = nombreCaso($p['slug']);
+        if ([] !== $p['roles']) {
+            $roles .= "            self::$caso => [" . implode(', ', array_map('php', $p['roles'])) . "],\n";
+        }
         $casos .= "    case $caso = " . php($p['slug']) . ";\n";
         $nombres .= "            self::$caso => " . php($p['nombre']) . ",\n";
         $descripciones .= "            self::$caso => " . php($p['descripcion']) . ",\n";
@@ -145,6 +188,9 @@ namespace Famiq\\PinPermisos;
  */
 enum Permissions: string
 {
+    /** Versión del catálogo. */
+    public const VERSION = '$version';
+
     /** Prefijo de los atributos de seguridad, para distinguir permisos de roles. */
     public const PREFIJO = '$prefijo';
 
@@ -190,6 +236,19 @@ $modulos        };
         return match (\$this) {
 $grupos        };
     }
+
+    /**
+     * Slugs de los roles que reciben el permiso cuando se crea en la base.
+     * Después se administra desde gestion: no se vuelve a aplicar.
+     *
+     * @return list<string>
+     */
+    public function rolesIniciales(): array
+    {
+        return match (\$this) {
+$roles            default => [],
+        };
+    }
 }
 
 PHP;
@@ -202,11 +261,18 @@ function generarJs(array $permisos, string $prefijo, string $version): string
         $constantes .= '  ' . nombreConstante($p['slug']) . ': ' . json_encode($p['slug']) . ",\n";
     }
 
-    $catalogo = json_encode(array_values($permisos), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+    $sinRoles = array_map(static function (array $p): array {
+        unset($p['roles']);
+
+        return $p;
+    }, $permisos);
+    $catalogo = json_encode(array_values($sinRoles), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 
     return <<<JS
 // Generado por bin/generar.php a partir de catalogo/permisos.json (versión $version).
 // No editar a mano: cambiar el JSON y volver a generar.
+
+export const VERSION = '$version';
 
 export const PREFIJO = '$prefijo';
 
@@ -243,6 +309,9 @@ function generarGo(array $permisos, string $prefijo, string $version): string
 
 // Package permisos expone el catálogo de permisos de la PIN.
 package permisos
+
+// Versión del catálogo.
+const Version = "$version"
 
 // Prefijo de los atributos de seguridad en las aplicaciones Symfony.
 const Prefijo = "$prefijo"

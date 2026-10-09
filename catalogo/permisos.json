@@ -1,9 +1,13 @@
 {
-  "version": "1.5.0",
+  "version": "1.6.0",
   "prefijo_atributo": "PERM_",
   "modulos": {
     "pin": "PIN",
     "gestion": "Gestión"
+  },
+  "roles_por_modulo": {
+    "pin": ["super_admin"],
+    "gestion": ["gestion_admin"]
   },
   "permisos": [
     {
@@ -606,14 +610,16 @@
       "nombre": "Generar ticket del tótem",
       "descripcion": "Generar un ticket de prueba del tótem (NemoQ).",
       "modulo": "pin",
-      "grupo": "Sistema"
+      "grupo": "Sistema",
+      "roles": ["developer"]
     },
     {
       "slug": "totem.ver_tickets_en_espera",
       "nombre": "Ver tickets en espera del tótem",
       "descripcion": "Consultar los tickets en espera del tótem (NemoQ).",
       "modulo": "pin",
-      "grupo": "Sistema"
+      "grupo": "Sistema",
+      "roles": ["developer"]
     },
     {
       "slug": "producto.mantenimiento",
